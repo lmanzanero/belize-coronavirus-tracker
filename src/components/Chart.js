@@ -19,6 +19,7 @@ class Chart extends Component {
   render(){
     return (
       <div className="chart">
+        <h1>Hello Charts.js</h1>
         <Bar
           data={this.state.chartData}
           options={{
