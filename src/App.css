@@ -30,15 +30,15 @@
   font-weight: 500;
   line-height: 19px;
   padding: 14px 28px;
-  background-image: linear-gradient(to right, #485563 0%, #29323c 51%, #485563 100%);
+  background-color: #29323c;
   color: whitesmoke;
   border-radius: 1em;
   width: auto;
-  margin: auto;
+  margin: 0.5em auto;
 }
  
 .screening-data .btn:hover { 
-  background-position: right center; 
+  background-color: rgb(20, 18, 18);
 }
 
 @keyframes App-logo-spin {
