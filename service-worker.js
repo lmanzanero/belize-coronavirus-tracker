@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/belize-coronavirus-tracker/precache-manifest.37eb07bb60580c34691119eceb2f4b2d.js"
+  "/belize-coronavirus-tracker/precache-manifest.0350b7054b414932f198b2f65c37ed95.js"
 );
 
 self.addEventListener('message', (event) => {
