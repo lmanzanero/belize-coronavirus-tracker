@@ -19,7 +19,7 @@ class App extends Component {
     //Ajax Call here
     this.setState({
       chartData: {
-        labels: ['Corozal', 'Orange Walk', 'San Pedro','Belize City', 'Cayo', 'Stann Creek', 'Toledo'],
+        labels: ['Corozal', 'San Pedro', 'Orange Walk','Belize City', 'Cayo', 'Stann Creek', 'Toledo'],
         datasets: [
           {
             label: 'Cases',
