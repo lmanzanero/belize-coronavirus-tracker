@@ -39,7 +39,7 @@ class Chart extends Component {
           options={{
             title: {
               display: this.props.displayTitle,
-              text: 'Largest Cities in ' +this.props.location,
+              text: 'Cases in' +this.props.location,
               fontSize: 25
             },
             legend: {
@@ -53,7 +53,7 @@ class Chart extends Component {
           options={{
             title: {
               display: this.props.displayTitle,
-              text: 'Largest Cities in ' +this.props.location,
+              text: 'Total Cases in ' +this.props.location,
               fontSize: 25
             },
             legend: {
