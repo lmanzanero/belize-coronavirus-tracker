@@ -24,12 +24,12 @@ class App extends Component {
           {
             label: 'Cases',
             data:[
-              6175994,
-              1810450,
-              1530600,
-              1065190,
-              1051620,
-              9507200
+              42,
+              129,
+              74,
+              34,
+              14,
+              1
             ],
             backgroundColor:[
             'rgba(255, 99, 132, 0.6)',
