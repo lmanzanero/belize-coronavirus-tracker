@@ -33,21 +33,7 @@ class Chart extends Component {
               position: this.props.legendPosition
             }
           }}
-        />
-        <Pie
-          data={this.state.chartData}
-          options={{
-            title: {
-              display: this.props.displayTitle,
-              text: 'Cases in' +this.props.location,
-              fontSize: 25
-            },
-            legend: {
-              display: this.props.displayLegend,
-              position: this.props.legendPosition
-            }
-          }}
-        />
+        /> 
         <Line
           data={this.state.chartData}
           options={{

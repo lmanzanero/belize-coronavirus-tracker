@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './belize-flag.png';
 import './App.css';
 import Chart from './components/Chart';
+import Footer from './components/Footer';
 
 class App extends Component {
   constructor(props){
@@ -17,6 +18,7 @@ class App extends Component {
 
   getChartData(){
     //Ajax Call here
+    //https://covid19.mathdro.id/api/countries/belize
     this.setState({
       chartData: {
         labels: ['Corozal', 'Orange Walk', 'San Pedro','Belize City', 'Cayo', 'Stann Creek', 'Toledo'],
@@ -63,7 +65,8 @@ class App extends Component {
             <div className="btn">Active<span></span></div >
           </div>
         </div>
-         <Chart chartData={this.state.chartData} location="Belize" legendPosition='bottom' />
+        <Chart chartData={this.state.chartData} location="Belize" legendPosition='bottom' /> 
+        <Footer/>
       </div>
     );
   }
