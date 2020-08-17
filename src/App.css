@@ -25,20 +25,36 @@
   margin-bottom: 2em;
 }
 
-.screening-data .btn {
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 19px;
+.App-header .virus {
+  width: 50px;
+}
+
+.screening-data .btn { 
   padding: 14px 28px;
   background-color: #29323c;
   color: whitesmoke;
   border-radius: 1em;
-  width: auto;
-  margin: 0.5em auto;
+  width: 100px;
+  height: 100px;
+  box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+  margin: auto; 
+}
+
+.screening-data .btn p {
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 19px;
+  margin: 0;
 }
  
 .screening-data .btn:hover { 
-  background-color: rgb(20, 18, 18);
+  box-shadow: 0px 3px 15px rgba(0,0,0,0.5);
+}
+
+.screening-data .btn img {
+  margin: 1em auto;
+  width: 40px;
+  height: 40px;
 }
 
 .footer {

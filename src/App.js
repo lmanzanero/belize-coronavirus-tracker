@@ -1,5 +1,13 @@
 import React, { Component } from 'react';
 import logo from './belize-flag.png';
+import virus from './virus.png';
+import positive from './positive.png';
+import recovered from './recovered.png';
+import negative from './negative.png';
+import swab from './swab.png';
+import death from './death.png';
+import search from './search.png';
+import active from './active.png';
 import './App.css';
 import Chart from './components/Chart';
 import { Footer } from './components/Footer';
@@ -54,15 +62,35 @@ class App extends Component {
       <div className="App">
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1>Belize Coronavirus Cases and live updates</h1>
+          <h1><img className="virus" src={virus} alt="Belize Coronavirus updates"/> Belize Coronavirus Cases and live updates <img className="virus" src={virus} alt="Belize Coronavirus updates"/></h1>
           <div className="screening-data">
-            <div className="btn">Tests Done</div >
-            <div className="btn">Under Investigation <span></span></div >
-            <div className="btn">Negative<span>-</span></div >
-            <div className="btn">Confirmed<span>+</span></div >
-            <div className="btn">Deseased<span></span></div >
-            <div className="btn">Recovered<span></span></div >
-            <div className="btn">Active<span></span></div >
+            <div className="btn">
+              <img src={swab} alt="Belize Coronavirus updates"/>
+              <p>Tests Done</p>
+            </div>
+            <div className="btn"><img src={search} alt="Belize Coronavirus under investigation"/>
+              <p>Under Investigation</p>
+            </div>
+            <div className="btn">
+              <img src={negative} alt="Belize negative cases"/>
+              <p>Negative</p>
+            </div>
+            <div className="btn">
+              <img src={positive} alt="Belize Coronavirus confirmed"/>
+              <p>Confirmed</p>
+            </div>
+            <div className="btn">
+              <img src={death} alt="Belize Coronavirus deseased"/>
+              <p>Deseased</p>
+            </div>
+            <div className="btn">
+              <img src={recovered} alt="Belize Coronavirus recovered"/>
+              <p>Recovered</p>
+            </div>
+            <div className="btn">
+              <img src={active} alt="Belize Coronavirus Active cases"/>
+              <p>Active</p>
+            </div>
           </div>
         </div>
         <Chart chartData={this.state.chartData} location="Belize" legendPosition='bottom' /> 
