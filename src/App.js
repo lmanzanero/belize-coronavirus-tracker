@@ -25,8 +25,8 @@ class App extends Component {
             label: 'Cases',
             data:[
               42,
-              158,
               129,
+              158,
               74,
               34,
               14,
@@ -34,7 +34,7 @@ class App extends Component {
             ],
             backgroundColor:[
             'rgba(255, 99, 132, 0.6)',
-            'rgba(235, 192, 52 0.6)',
+            '#ffa500',
             'rgba(54, 162, 235, 0.6)',
             'rgba(75, 192, 192, 0.6)',
             'rgba(153, 102, 255, 0.6)',
