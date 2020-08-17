@@ -49,7 +49,19 @@
   width: 100%;
   height: 200px;
   background-color: #29323c;
-  color: whitesmoke
+}
+
+.footer p {
+  margin: auto;
+  color: whitesmoke;
+  font-size: 1em;
+  font-weight: bold;
+  width: 50vw;
+}
+
+.footer a {
+  text-decoration: none;
+  color: bisque;
 }
 
 @keyframes App-logo-spin {
