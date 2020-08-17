@@ -53,16 +53,16 @@ class App extends Component {
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Belize Coronavirus Cases</h2>
-        </div>
           <div className="screening-data">
-            <button>Tests Done</button>
-            <button>Under Investigation <span></span></button>
-            <button>Negative<span>-</span></button>
-            <button>Confirmed<span>+</span></button>
-            <button>Deseased<span></span></button>
-            <button>Recovered<span></span></button>
-            <button>Active<span></span></button>
+            <div className="btn">Tests Done</div >
+            <div className="btn">Under Investigation <span></span></div >
+            <div className="btn">Negative<span>-</span></div >
+            <div className="btn">Confirmed<span>+</span></div >
+            <div className="btn">Deseased<span></span></div >
+            <div className="btn">Recovered<span></span></div >
+            <div className="btn">Active<span></span></div >
           </div>
+        </div>
          <Chart chartData={this.state.chartData} location="Belize" legendPosition='bottom' />
       </div>
     );
