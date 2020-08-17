@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/belize-coronavirus-tracker/static/css/main.be76a122.chunk.css",
+    "main.css": "/belize-coronavirus-tracker/static/css/main.e71d867b.chunk.css",
     "main.js": "/belize-coronavirus-tracker/static/js/main.6857f449.chunk.js",
     "main.js.map": "/belize-coronavirus-tracker/static/js/main.6857f449.chunk.js.map",
     "runtime-main.js": "/belize-coronavirus-tracker/static/js/runtime-main.ba573399.js",
@@ -8,16 +8,16 @@
     "static/js/2.53180d32.chunk.js": "/belize-coronavirus-tracker/static/js/2.53180d32.chunk.js",
     "static/js/2.53180d32.chunk.js.map": "/belize-coronavirus-tracker/static/js/2.53180d32.chunk.js.map",
     "index.html": "/belize-coronavirus-tracker/index.html",
-    "precache-manifest.e3b7573104504182b0e1643926408a4e.js": "/belize-coronavirus-tracker/precache-manifest.e3b7573104504182b0e1643926408a4e.js",
+    "precache-manifest.3cfd614805df0c283e66536496d6fb7f.js": "/belize-coronavirus-tracker/precache-manifest.3cfd614805df0c283e66536496d6fb7f.js",
     "service-worker.js": "/belize-coronavirus-tracker/service-worker.js",
-    "static/css/main.be76a122.chunk.css.map": "/belize-coronavirus-tracker/static/css/main.be76a122.chunk.css.map",
+    "static/css/main.e71d867b.chunk.css.map": "/belize-coronavirus-tracker/static/css/main.e71d867b.chunk.css.map",
     "static/js/2.53180d32.chunk.js.LICENSE.txt": "/belize-coronavirus-tracker/static/js/2.53180d32.chunk.js.LICENSE.txt",
     "static/media/belize-flag.png": "/belize-coronavirus-tracker/static/media/belize-flag.718e720a.png"
   },
   "entrypoints": [
     "static/js/runtime-main.ba573399.js",
     "static/js/2.53180d32.chunk.js",
-    "static/css/main.be76a122.chunk.css",
+    "static/css/main.e71d867b.chunk.css",
     "static/js/main.6857f449.chunk.js"
   ]
 }
