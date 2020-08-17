@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from './belize-flag.png';
 import './App.css';
 import Chart from './components/Chart';
-import Footer from './components/Footer';
+import { Footer } from './components/Footer';
 
 class App extends Component {
   constructor(props){
