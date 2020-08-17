@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import logo from './belize-flag.png';
 import './App.css';
 import Chart from './components/Chart';
 
@@ -19,10 +19,10 @@ class App extends Component {
     //Ajax Call here
     this.setState({
       chartData: {
-        labels: ['Boston', 'Worcester', 'Springfield', 'Lowell', 'Cambridge', 'New Bedford'],
+        labels: ['Corozal', 'Orange Walk', 'Belize City', 'Cayo', 'Stann Creek', 'Toledo'],
         datasets: [
           {
-            label: 'Population',
+            label: 'Cases',
             data:[
               6175994,
               1810450,
@@ -51,9 +51,9 @@ class App extends Component {
       <div className="App">
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+          <h2>Belize Coronavirus Cases</h2>
         </div>
-         <Chart chartData={this.state.chartData} location="New York" legendPosition='bottom' />
+         <Chart chartData={this.state.chartData} location="Belize" legendPosition='bottom' />
       </div>
     );
   }

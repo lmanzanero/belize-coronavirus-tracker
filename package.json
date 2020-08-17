@@ -1,21 +1,21 @@
 {
   "name": "reactcharts",
   "version": "0.1.0",
-  "homepage": "https://lmanzanero.github.io/react-charts",
+  "homepage": "https://lmanzanero.github.io/belize-coronavirus-tracker",
   "private": true,
   "dependencies": {
     "chart.js": "^2.6.0",
-    "react": "^15.6.1",
+    "react": "^16.13.1",
     "react-chartjs-2": "^2.1.0",
     "react-dom": "^15.6.1",
-    "react-scripts": "1.0.10"
+    "react-scripts": "^3.4.3"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "deploy" : "npm run build&&gh-pages -d build"
+    "deploy": "npm run build&&gh-pages -d build"
   },
   "devDependencies": {
     "gh-pages": "^1.0.0"

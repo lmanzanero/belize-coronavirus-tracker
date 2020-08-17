@@ -19,13 +19,13 @@ class Chart extends Component {
   render(){
     return (
       <div className="chart">
-        <h1>Hello Charts.js</h1>
+        <h1>{Date.now().toFixed()}</h1>
         <Bar
           data={this.state.chartData}
           options={{
             title: {
               display: this.props.displayTitle,
-              text: 'Largest Cities in ' +this.props.location,
+              text: 'Cases in ' +this.props.location,
               fontSize: 25
             },
             legend: {
