@@ -54,7 +54,7 @@ class App extends Component {
       <div className="App">
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h2>Belize Coronavirus Cases</h2>
+          <h1>Belize Coronavirus Cases and live updates</h1>
           <div className="screening-data">
             <div className="btn">Tests Done</div >
             <div className="btn">Under Investigation <span></span></div >
