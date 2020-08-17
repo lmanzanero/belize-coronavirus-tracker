@@ -20,6 +20,15 @@ class Chart extends Component {
     return (
       <div className="chart">
         <h1>🇧🇿Total Cases: {452} 🇧🇿</h1>
+        <div className="screening-data">
+          <button>Tests Done</button>
+          <button>Under Investigation <span></span></button>
+          <button>Negative<span>-</span></button>
+          <button>Confirmed<span>+</span></button>
+          <button>Deseased<span></span></button>
+          <button>Recovered<span></span></button>
+          <button>Active<span></span></button>
+        </div>
         <Bar
           data={this.state.chartData}
           options={{
