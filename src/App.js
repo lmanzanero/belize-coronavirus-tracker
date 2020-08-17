@@ -11,6 +11,7 @@ import active from './active.png';
 import './App.css';
 import Chart from './components/Chart';
 import { Footer } from './components/Footer';
+import ReactGA from 'react-ga';
 
 class App extends Component {
   constructor(props){
@@ -18,6 +19,8 @@ class App extends Component {
     this.state = {
       chartData: props.chartData
     }
+    ReactGA.initialize('UA-175547717-1');
+    ReactGA.pageview(window.location.pathname + window.location.search);
   }
 
   componentWillMount(){
