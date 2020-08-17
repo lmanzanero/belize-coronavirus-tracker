@@ -34,6 +34,7 @@ class Chart extends Component {
             }
           }}
         /> 
+        <h1>Belize's Coronavirus Curve</h1>
         <Line
           data={this.state.chartData}
           options={{
