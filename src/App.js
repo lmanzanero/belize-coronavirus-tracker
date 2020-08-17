@@ -19,12 +19,13 @@ class App extends Component {
     //Ajax Call here
     this.setState({
       chartData: {
-        labels: ['Corozal', 'Orange Walk', 'Belize City', 'Cayo', 'Stann Creek', 'Toledo'],
+        labels: ['Corozal', 'Orange Walk', 'San Pedro','Belize City', 'Cayo', 'Stann Creek', 'Toledo'],
         datasets: [
           {
             label: 'Cases',
             data:[
               42,
+              158,
               129,
               74,
               34,
@@ -33,7 +34,7 @@ class App extends Component {
             ],
             backgroundColor:[
             'rgba(255, 99, 132, 0.6)',
-            'rgba(54, 162, 235, 0.6)',
+            '#ffc107',
             'rgba(255, 206, 86, 0.6)',
             'rgba(75, 192, 192, 0.6)',
             'rgba(153, 102, 255, 0.6)',
