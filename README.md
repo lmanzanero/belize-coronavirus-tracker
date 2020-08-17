@@ -1,3 +1,3 @@
-## Table of Contents
+## Belize Coronavirus Tracker 🇧🇿
 
-#see live updates [here](https://www.google.com)
+#see live updates [here](https://lmanzanero.github.io/belize-coronavirus-tracker/)
