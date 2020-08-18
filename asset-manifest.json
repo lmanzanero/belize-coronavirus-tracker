@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/belize-coronavirus-tracker/static/css/main.60862fca.chunk.css",
-    "main.js": "/belize-coronavirus-tracker/static/js/main.2b15ce2a.chunk.js",
-    "main.js.map": "/belize-coronavirus-tracker/static/js/main.2b15ce2a.chunk.js.map",
+    "main.css": "/belize-coronavirus-tracker/static/css/main.3aa3cd7a.chunk.css",
+    "main.js": "/belize-coronavirus-tracker/static/js/main.3d04f1ff.chunk.js",
+    "main.js.map": "/belize-coronavirus-tracker/static/js/main.3d04f1ff.chunk.js.map",
     "runtime-main.js": "/belize-coronavirus-tracker/static/js/runtime-main.ba573399.js",
     "runtime-main.js.map": "/belize-coronavirus-tracker/static/js/runtime-main.ba573399.js.map",
     "static/js/2.61fd87a8.chunk.js": "/belize-coronavirus-tracker/static/js/2.61fd87a8.chunk.js",
     "static/js/2.61fd87a8.chunk.js.map": "/belize-coronavirus-tracker/static/js/2.61fd87a8.chunk.js.map",
     "index.html": "/belize-coronavirus-tracker/index.html",
-    "precache-manifest.ef876e0611bd38f90cfd83675fec797a.js": "/belize-coronavirus-tracker/precache-manifest.ef876e0611bd38f90cfd83675fec797a.js",
+    "precache-manifest.a9d2a43ba0d374451bb8f2e2fd6a3cbe.js": "/belize-coronavirus-tracker/precache-manifest.a9d2a43ba0d374451bb8f2e2fd6a3cbe.js",
     "service-worker.js": "/belize-coronavirus-tracker/service-worker.js",
-    "static/css/main.60862fca.chunk.css.map": "/belize-coronavirus-tracker/static/css/main.60862fca.chunk.css.map",
+    "static/css/main.3aa3cd7a.chunk.css.map": "/belize-coronavirus-tracker/static/css/main.3aa3cd7a.chunk.css.map",
     "static/js/2.61fd87a8.chunk.js.LICENSE.txt": "/belize-coronavirus-tracker/static/js/2.61fd87a8.chunk.js.LICENSE.txt",
     "static/media/active.png": "/belize-coronavirus-tracker/static/media/active.14662814.png",
     "static/media/belize-flag.png": "/belize-coronavirus-tracker/static/media/belize-flag.718e720a.png",
@@ -25,7 +25,7 @@
   "entrypoints": [
     "static/js/runtime-main.ba573399.js",
     "static/js/2.61fd87a8.chunk.js",
-    "static/css/main.60862fca.chunk.css",
-    "static/js/main.2b15ce2a.chunk.js"
+    "static/css/main.3aa3cd7a.chunk.css",
+    "static/js/main.3d04f1ff.chunk.js"
   ]
 }
