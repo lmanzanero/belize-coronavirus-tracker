@@ -32,6 +32,7 @@
 
 .chart {
   padding: 1em;
+  margin: 0; 
 }
 
 .chart .chart-inner {
@@ -39,6 +40,9 @@
   grid-template-columns: 1fr 1fr;
   grid-gap: 2em;
   height: 600px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
  
 
