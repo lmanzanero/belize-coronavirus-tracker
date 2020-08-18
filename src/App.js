@@ -37,11 +37,11 @@ class App extends Component {
           {
             label: 'Cases',
             data:[
-              42,
-              129,
-              158,
-              74,
-              34,
+              46,
+              130,
+              164,
+              82,
+              38,
               14,
               1
             ],
@@ -69,30 +69,30 @@ class App extends Component {
           <div className="screening-data">
             <div className="btn">
               <img src={swab} alt="Belize Coronavirus updates"/>
-              <p>Tests Done</p>
+              <p><span>5281</span><br/>Tests Done</p>
             </div>
             <div className="btn"><img src={search} alt="Belize Coronavirus under investigation"/>
-              <p>Under Investigation</p>
+              <p><span>481</span><br/>Under Investigation</p>
             </div>
             <div className="btn">
               <img src={negative} alt="Belize negative cases"/>
-              <p>Negative</p>
+              <p><span>4761</span><br/>Negative</p>
             </div>
             <div className="btn">
               <img src={positive} alt="Belize Coronavirus confirmed"/>
-              <p>Confirmed</p>
+              <p><span>475</span><br/>Confirmed</p>
             </div>
             <div className="btn">
               <img src={death} alt="Belize Coronavirus deseased"/>
-              <p>Deseased</p>
+              <p><span>4</span><br/>Deseased</p>
             </div>
             <div className="btn">
               <img src={recovered} alt="Belize Coronavirus recovered"/>
-              <p>Recovered</p>
+              <p><span>38</span><br/>Recovered</p>
             </div>
             <div className="btn">
               <img src={active} alt="Belize Coronavirus Active cases"/>
-              <p>Active</p>
+              <p><span>433</span><br/>Active</p>
             </div>
           </div>
         </div>
