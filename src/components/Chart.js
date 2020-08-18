@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Bar, Line } from 'react-chartjs-2';
+import belize from '../belize.svg';
 
 class Chart extends Component {
   constructor(props){
@@ -20,37 +21,29 @@ class Chart extends Component {
     return (
       <div className="chart">
         <h1>🇧🇿Total Cases: {475} 🇧🇿</h1>
-        <Bar
-          data={this.state.chartData}
-          options={{
-            title: {
-              display: this.props.displayTitle,
-              text: 'Cases in ' +this.props.location,
-              fontSize: 25
-            },
-            legend: {
-              display: this.props.displayLegend,
-              position: this.props.legendPosition
-            },
-            maintainAspectRatio: false
-          }}
-        /> 
-        <h1>Belize's Coronavirus Curve</h1>
-        <Line
-          data={this.state.chartData}
-          options={{
-            title: {
-              display: this.props.displayTitle,
-              text: 'Total Cases in ' +this.props.location,
-              fontSize: 25
-            },
-            legend: {
-              display: this.props.displayLegend,
-              position: this.props.legendPosition
-            },
-            maintainAspectRatio: true, 
-          }}
-        />
+        <div className="chart-inner">
+          <div>
+              <Bar
+              data={this.state.chartData}
+              options={{
+                title: {
+                  display: this.props.displayTitle,
+                  text: 'Cases in ' +this.props.location,
+                  fontSize: 25
+                },
+                legend: {
+                  display: this.props.displayLegend,
+                  position: this.props.legendPosition
+                },
+                maintainAspectRatio: false
+              }}
+            /> 
+          </div> 
+          <div className="belize-map">
+            {/* <img src={belize}/> */}
+            <h1>Belize Map</h1>
+          </div> 
+        </div>    
       </div>
     );
   }
