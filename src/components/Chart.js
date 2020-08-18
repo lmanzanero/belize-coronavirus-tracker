@@ -31,7 +31,8 @@ class Chart extends Component {
             legend: {
               display: this.props.displayLegend,
               position: this.props.legendPosition
-            }
+            },
+            maintainAspectRatio: false
           }}
         /> 
         <h1>Belize's Coronavirus Curve</h1>
@@ -46,7 +47,8 @@ class Chart extends Component {
             legend: {
               display: this.props.displayLegend,
               position: this.props.legendPosition
-            }
+            },
+            maintainAspectRatio: true, 
           }}
         />
       </div>
