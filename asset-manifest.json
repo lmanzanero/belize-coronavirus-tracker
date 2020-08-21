@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/belize-coronavirus-tracker/static/css/main.7cec056e.chunk.css",
-    "main.js": "/belize-coronavirus-tracker/static/js/main.a5fac6a6.chunk.js",
-    "main.js.map": "/belize-coronavirus-tracker/static/js/main.a5fac6a6.chunk.js.map",
+    "main.css": "/belize-coronavirus-tracker/static/css/main.d17ca6bc.chunk.css",
+    "main.js": "/belize-coronavirus-tracker/static/js/main.3542db8a.chunk.js",
+    "main.js.map": "/belize-coronavirus-tracker/static/js/main.3542db8a.chunk.js.map",
     "runtime-main.js": "/belize-coronavirus-tracker/static/js/runtime-main.ba573399.js",
     "runtime-main.js.map": "/belize-coronavirus-tracker/static/js/runtime-main.ba573399.js.map",
-    "static/js/2.66b7397c.chunk.js": "/belize-coronavirus-tracker/static/js/2.66b7397c.chunk.js",
-    "static/js/2.66b7397c.chunk.js.map": "/belize-coronavirus-tracker/static/js/2.66b7397c.chunk.js.map",
+    "static/js/2.cd019b68.chunk.js": "/belize-coronavirus-tracker/static/js/2.cd019b68.chunk.js",
+    "static/js/2.cd019b68.chunk.js.map": "/belize-coronavirus-tracker/static/js/2.cd019b68.chunk.js.map",
     "index.html": "/belize-coronavirus-tracker/index.html",
-    "precache-manifest.3fa99cbbfcc10f2879dedbb91e4e92ab.js": "/belize-coronavirus-tracker/precache-manifest.3fa99cbbfcc10f2879dedbb91e4e92ab.js",
+    "precache-manifest.49f4798ad5a896532749a5133f811418.js": "/belize-coronavirus-tracker/precache-manifest.49f4798ad5a896532749a5133f811418.js",
     "service-worker.js": "/belize-coronavirus-tracker/service-worker.js",
-    "static/css/main.7cec056e.chunk.css.map": "/belize-coronavirus-tracker/static/css/main.7cec056e.chunk.css.map",
-    "static/js/2.66b7397c.chunk.js.LICENSE.txt": "/belize-coronavirus-tracker/static/js/2.66b7397c.chunk.js.LICENSE.txt",
+    "static/css/main.d17ca6bc.chunk.css.map": "/belize-coronavirus-tracker/static/css/main.d17ca6bc.chunk.css.map",
+    "static/js/2.cd019b68.chunk.js.LICENSE.txt": "/belize-coronavirus-tracker/static/js/2.cd019b68.chunk.js.LICENSE.txt",
     "static/media/active.png": "/belize-coronavirus-tracker/static/media/active.14662814.png",
     "static/media/belize-flag.png": "/belize-coronavirus-tracker/static/media/belize-flag.718e720a.png",
     "static/media/belize.svg": "/belize-coronavirus-tracker/static/media/belize.6b5cd1d5.svg",
@@ -25,8 +25,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.ba573399.js",
-    "static/js/2.66b7397c.chunk.js",
-    "static/css/main.7cec056e.chunk.css",
-    "static/js/main.a5fac6a6.chunk.js"
+    "static/js/2.cd019b68.chunk.js",
+    "static/css/main.d17ca6bc.chunk.css",
+    "static/js/main.3542db8a.chunk.js"
   ]
 }
