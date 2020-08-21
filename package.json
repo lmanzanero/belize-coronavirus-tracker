@@ -4,11 +4,14 @@
   "homepage": "https://lmanzanero.github.io/belize-coronavirus-tracker",
   "private": true,
   "dependencies": {
+    "axios": "^0.19.2",
     "chart.js": "^2.6.0",
+    "leaflet": "^1.6.0",
     "react": "^16.13.1",
     "react-chartjs-2": "^2.1.0",
     "react-dom": "^16.13.1",
     "react-ga": "^3.1.2",
+    "react-leaflet": "^2.7.0",
     "react-scripts": "^3.4.3",
     "react-snap": "^1.23.0"
   },

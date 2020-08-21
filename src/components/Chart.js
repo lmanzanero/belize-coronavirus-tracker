@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Bar, Line } from 'react-chartjs-2';
-import belize from '../belize.svg';
+import { Bar } from 'react-chartjs-2';
 
 class Chart extends Component {
   constructor(props){
@@ -12,7 +11,7 @@ class Chart extends Component {
 
   static defaultProps = {
     displayTitle: true,
-    displayLegend: true,
+    displayLegend: false,
     legendPosition:'right',
     location: 'City'
   }
@@ -20,29 +19,22 @@ class Chart extends Component {
   render(){
     return (
       <div className="chart">
-        <h1>🇧🇿Total Cases: {475} 🇧🇿</h1>
-        <div className="chart-inner">
-          <div>
-              <Bar
-              data={this.state.chartData}
-              options={{
-                title: {
-                  display: this.props.displayTitle,
-                  text: 'Cases in ' +this.props.location,
-                  fontSize: 25
-                },
-                legend: {
-                  display: this.props.displayLegend,
-                  position: this.props.legendPosition
-                },
-                maintainAspectRatio: false
-              }}
-            /> 
-          </div> 
-          <div className="belize-map">
-            {/* <img src={belize}/> */}
-            <h1>Belize Map</h1>
-          </div> 
+        <div className="chart-inner"> 
+            <Bar
+            data={this.state.chartData}
+            options={{
+              title: {
+                display: this.props.displayTitle,
+                text: 'Cases by ' +this.props.location,
+                fontSize: 25
+              },
+              legend: {
+                display: this.props.displayLegend,
+                position: this.props.legendPosition
+              },
+              maintainAspectRatio: false
+            }}
+          />  
         </div>    
       </div>
     );

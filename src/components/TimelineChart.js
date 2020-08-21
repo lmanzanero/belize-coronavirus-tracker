@@ -18,23 +18,25 @@ export default class TimelineChart extends Component {
 
   render(){
     return (
-      <div className="chart">
-        <h1>Belize's Coronavirus Curve</h1>
+      <div className="chart"> 
+          <div className="chart-inner">
           <Line
             data={this.state.chartData}
             options={{
               title: {
                 display: this.props.displayTitle,
                 text: 'Coronavirus Curve in ' +this.props.location,
-                fontSize: 25
+                fontSize: 25,
+                fontColor: 'whitesmoke',
               },
               legend: {
                 display: this.props.displayLegend,
-                position: this.props.legendPosition
+                position: this.props.legendPosition, 
               },
-              maintainAspectRatio: false, 
+              maintainAspectRatio: false,  
             }}
           />
+          </div>
       </div>  
     );
   }
