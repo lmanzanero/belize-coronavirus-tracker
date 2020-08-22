@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "906214b2d72bf51cc0adf8fc7bc7eb35",
+    "revision": "7c628849a4c136e3c80de9d7a388a062",
     "url": "/belize-coronavirus-tracker/index.html"
   },
   {
-    "revision": "cab8c89ee753e0854150",
+    "revision": "85bc3b20ac08db524fb5",
     "url": "/belize-coronavirus-tracker/static/css/main.80cbb46a.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/belize-coronavirus-tracker/static/js/2.b862ef74.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "cab8c89ee753e0854150",
-    "url": "/belize-coronavirus-tracker/static/js/main.314a852e.chunk.js"
+    "revision": "85bc3b20ac08db524fb5",
+    "url": "/belize-coronavirus-tracker/static/js/main.36502848.chunk.js"
   },
   {
     "revision": "bb6c701cbadc24896382",
