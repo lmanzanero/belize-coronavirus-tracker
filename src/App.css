@@ -3,8 +3,7 @@
   background-color: #29323c;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 50s linear;
+.App-logo { 
   height: 80px;
 }
 
@@ -68,7 +67,7 @@
   border-radius: 1em;
   width: 100px;
   height: 100px;
-  box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+  box-shadow: inset 0px 3px 15px rgba(0,0,0,0.3);
   margin: 1em auto; 
 }
 
@@ -80,9 +79,9 @@
   color: antiquewhite;
 }
 
-.screening-data .btn:hover { 
-  box-shadow: 0px 3px 15px rgba(0,0,0,0.5);
-}
+/* .screening-data .btn:hover { 
+  box-shadow: inset 0px 3px 15px rgba(0,0,0,0.2);
+} */
 
 .screening-data .btn img {
   margin: auto;
@@ -119,7 +118,7 @@
 
 .footer a {
   text-decoration: none;
-  color: bisque;
+  color: rgb(11, 160, 206);
 }
 
 @keyframes App-logo-spin {

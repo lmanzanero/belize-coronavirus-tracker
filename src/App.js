@@ -26,16 +26,25 @@ class App extends Component {
       lineChartData: props.lineChartData,
       genderData: props.chartData,
       apiData: [],
-      groupMonths: []
+      groupMonths: [],
+      activeCases: 0,
+      deaths: 0,
+      confirmedCases: 0,
+      recovered: 0,
+      lastUpdated: ''
     }
     ReactGA.initialize('UA-175547717-1');
     ReactGA.pageview(window.location.pathname + window.location.search);
   }
 
-  componentWillMount(){
-    this.getApiData(); 
+  componentWillMount(){ 
     this.getChartData();
     this.getChartLineData(); 
+  }
+
+  componentDidMount() {
+    this.getApiData();
+    this.getLatestData();
   }
 
   //  setGroupMonths() {
@@ -79,9 +88,8 @@ class App extends Component {
   // }
 
   getApiData() { 
-    axios.get(`${process.env.REACT_APP_CONFIRMEDCASESGENDER}`)
-    .then((e) => {     
-      console.log(e.data.features[0].attributes);
+    axios.get(`https://services6.arcgis.com/fbMLjLVHNRUxmuIA/arcgis/rest/services/country_covid19_cases/FeatureServer/0/query?f=json&where=1%3D1&returnGeometry=false&spatialRel=esriSpatialRelIntersects&outFields=*&outStatistics=%5B%7B%22statisticType%22%3A%22sum%22%2C%22onStatisticField%22%3A%22confirmale%22%2C%22outStatisticFieldName%22%3A%22confirmale%22%7D%2C%7B%22statisticType%22%3A%22sum%22%2C%22onStatisticField%22%3A%22confirmfemale%22%2C%22outStatisticFieldName%22%3A%22confirmfemale%22%7D%5D&resultType=standard&cacheHint=true`)
+    .then((e) => {      
       this.setState({
           genderData: {
           labels: ['Male', 'Female'],
@@ -134,7 +142,6 @@ class App extends Component {
 
   getChartData(){
     //Ajax Call here
-    //https://covid19.mathdro.id/api/countries/belize
     this.setState({
       chartData: {
         labels: ['Corozal', 'Orange Walk', 'San Pedro','Belize City', 'Cayo', 'Stann Creek', 'Toledo'],
@@ -165,13 +172,31 @@ class App extends Component {
     });
   }
 
+  getLatestData() { 
+    //https://covid19.mathdro.id/api/countries/belize
+    axios.get(`https://covid19.mathdro.id/api/countries/belize/confirmed`)
+    .then((e) => { 
+      console.log(e.data[0].active)
+      this.setState({
+        activeCases: e.data[0].active,
+        deaths: e.data[0].deaths,
+        confirmedCases: e.data[0].confirmed,
+        lastUpdated: e.data[0].lastUpdate,
+        recovered: e.data[0].recovered
+      });
+    })
+    .catch((e) => {
+      console.log(e);
+    })
+  }
+
   render() {     
     return (
       <div className="App">
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h1><img className="virus" src={virus} alt="Belize Coronavirus updates"/> Belize Coronavirus Cases and live updates <img className="virus" src={virus} alt="Belize Coronavirus updates"/></h1>
-          <h4>🇧🇿Total Cases: {605} 🇧🇿</h4>
+          <h4>🇧🇿Total Cases: {this.state.confirmedCases} 🇧🇿 <br/> <span>Last Updated: {Date(Number(this.state.lastUpdated)*1000)}</span></h4>
           <div className="screening-data">
             <div className="btn">
                <p>Test Done</p>
@@ -196,17 +221,17 @@ class App extends Component {
             <div className="btn">
               <p>Deseased</p>
                <img src={death} alt="Belize Coronavirus deseased"/>
-              <p className="number">5</p>
+               <p className="number">{this.state.deaths}</p>
             </div>
             <div className="btn">
               <p>Recovered</p>
                <img src={recovered} alt="Belize Coronavirus recovered"/>
-              <p>38</p>
+              <p>{this.state.recovered}</p>
             </div>
             <div className="btn">
               <p>Active</p>
                <img src={active} alt="Belize Coronavirus Active cases"/>
-              <p>511</p>
+               <p>{this.state.activeCases}</p>
             </div>
           </div>
         </div>
