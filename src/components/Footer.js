@@ -10,7 +10,7 @@ export const Footer = () => {
           <p>All Contributors</p>
           {
             isLoading ? 'loading...' : data.data.map(contributor => 
-                <img src={contributor.avatar_url} />   
+                <img key={contributor.id} src={contributor.avatar_url} />   
               )
           }
         </div>

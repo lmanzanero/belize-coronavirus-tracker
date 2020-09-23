@@ -48,9 +48,9 @@ export const GenderChart = () => {
   }, [])
   return (
     <div className="chart">
-      <div className="chart-inner"> 
-          <canvas id="casesByGenderChart" style={{margin: 0, padding:0}}></canvas>
-          {isLoading ? 'loading...' : 'data'}
+      {isLoading ? <div className="loading-text">loading...</div> : ""}
+      <div className={isLoading ? "chart-inner loading" : "chart-inner"}> 
+          <canvas id="casesByGenderChart" style={{margin: 0, padding:0}}></canvas> 
       </div>    
     </div>
   ); 

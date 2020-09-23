@@ -33,6 +33,7 @@
 }
 
 .chart { 
+  position: relative;
   margin: 0; 
   padding: 0;
   height: 100%;
@@ -59,7 +60,24 @@
   background-color: #222;
   box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
 }
- 
+
+.chart .chart-inner.loading{
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);  
+}
+
+.chart .loading-text {
+  z-index: 99999;
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  font-size: 1.5em; 
+  letter-spacing: 2px;
+  color: antiquewhite
+}
 
 .screening-data .btn { 
   padding: 14px 28px;

@@ -98,14 +98,13 @@ export const App = () => {
           <TimelineChart/>
         </div>
         <div className="grid-2"> 
-          <GenderChart />  
-          <TimelineChart/>
+          <GenderChart name="gender1" />  
+          <Chart /> 
         </div>
         <div className="map-container"> 
             <h1>View Cases on Map</h1>
             <div className="map-container-inner">
-              <BelizeMap/>
-              <GenderChart />  
+              <BelizeMap/> 
               <div>
                 <h4>Cases By District</h4>
               </div>
