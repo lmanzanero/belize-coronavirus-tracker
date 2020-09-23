@@ -89,13 +89,20 @@
   height: 40px;
 }
 
-.belize-map {
-  position: relative;
-  height: 400px;
-  width: 100%;
-  margin: 0;
-  padding: 0;
+.map-container { 
+  margin: 1em;
   overflow: hidden;
+}
+
+.map-container .map-container-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1em;
+}
+
+#mapid { 
+  height: 500px; 
+  width: 100%; 
 }
 
 .footer {

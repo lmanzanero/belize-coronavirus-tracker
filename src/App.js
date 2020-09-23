@@ -101,9 +101,14 @@ export const App = () => {
           <GenderChart /> 
           <TimelineChart/>
         </div>
-        <div className="belize-map"> 
+        <div className="map-container"> 
             <h1>View Cases on Map</h1>
-            {/* <BelizeMap/> */}
+            <div className="map-container-inner">
+              <BelizeMap/>
+              <div>
+                <h4>Cases By District</h4>
+              </div>
+            </div>
         </div> 
         <Footer/>
       </div>
