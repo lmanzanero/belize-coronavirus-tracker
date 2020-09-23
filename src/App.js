@@ -53,8 +53,8 @@ export const App = () => {
       <div className="App">
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1><img className="virus" src={virus} alt="Belize Coronavirus updates"/> Belize Coronavirus Cases and live updates <img className="virus" src={virus} alt="Belize Coronavirus updates"/></h1>
-          <h4>🇧🇿Total Cases: {isLoading ? 'loading...' : data.data[0].confirmed} 🇧🇿 <br/> <span>Last Updated: { isLoading ? 'loading...' : Date(Number(data.data[0].lastUpdate))}</span></h4>
+          <h1><span className="virus">🦠</span> Belize Coronavirus (covid-19) cases and live updates <span className="virus">🦠</span></h1>
+          <h4>🇧🇿 Total Cases: {isLoading ? 'loading...' : data.data[0].confirmed} 🇧🇿 <br/> <span>Last Updated: { isLoading ? 'loading...' : Date(Number(data.data[0].lastUpdate))}</span></h4>
           <div className="screening-data">
             <div className="btn">
                <p>Test Done</p>

@@ -28,6 +28,7 @@
 }
 
 .App-header .virus {
+  display: inline-block;
   width: 50px;
   animation: App-logo-spin infinite 50s linear;
 }
@@ -158,6 +159,16 @@
   width: 3em;
   margin: 0.1em;
   border-radius: 50%;
+  border: 2px solid #29323c;
+  box-shadow: 0px 3px 15px rgba(0,0,0,0.5);
+  transition: all 0.5s;
+}
+
+.contributors img:hover {
+  transform: scale(2);
+  border: #29323c;
+  box-shadow: 0px 3px 15px rgba(0,0,0,0.9);
+  transition: all 0.5s;
 }
 
 @keyframes App-logo-spin {
