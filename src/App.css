@@ -105,9 +105,7 @@
   width: 100%; 
 }
 
-.footer {
-  display: flex;
-  flex-direction: row;
+.footer { 
   justify-content: center;
   text-align: center;
   width: 100%;
@@ -126,6 +124,19 @@
 .footer a {
   text-decoration: none;
   color: rgb(11, 160, 206);
+}
+
+.contributors {  
+  width: 100%;
+  font-size: 0.7em; 
+  color: aqua;
+}
+
+.contributors img {
+  height: 2em;
+  width: 2em;
+  margin: 0.5em;
+  border-radius: 50%;
 }
 
 @keyframes App-logo-spin {

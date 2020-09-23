@@ -17,4 +17,8 @@ const getCasesByGender = () => {
   return axios.get(process.env.REACT_APP_CONFIRMEDCASESGENDER)
 }
 
-export { getCasesByDistrict, getCasesByGender, getApiData, getCasesByTimeline }
+const getGithubContributors = () => {
+  return axios.get("https://api.github.com/repos/jxw1102/Projet-merou/contributors");
+}
+
+export { getCasesByDistrict, getCasesByGender, getApiData, getCasesByTimeline, getGithubContributors }
