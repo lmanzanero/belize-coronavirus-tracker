@@ -9,13 +9,13 @@ import death from './icons/death.png';
 import search from './icons/search.png';
 import active from './icons/active.png';
 import './App.css';
-import Chart from './components/Chart';
-import TimelineChart from './components/TimelineChart';
+import Chart from './components/charts/Chart';
+import TimelineChart from './components/charts/TimelineChart';
 import { Footer } from './components/Footer'; 
 import ReactGA from 'react-ga';
 import axios from 'axios';
 import BelizeMap from './components/Map';
-import GenderChart from './components/GenderChart';
+import GenderChart from './components/charts/GenderChart';
 import { useQuery } from 'react-query';
 import { getApiData } from './repository/api';
 
@@ -98,13 +98,14 @@ export const App = () => {
           <TimelineChart/>
         </div>
         <div className="grid-2"> 
-          <GenderChart /> 
+          <GenderChart />  
           <TimelineChart/>
         </div>
         <div className="map-container"> 
             <h1>View Cases on Map</h1>
             <div className="map-container-inner">
               <BelizeMap/>
+              <GenderChart />  
               <div>
                 <h4>Cases By District</h4>
               </div>

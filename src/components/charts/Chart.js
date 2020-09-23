@@ -1,6 +1,6 @@
 import React from 'react'; 
 import { useQuery } from 'react-query';
-import { getCasesByDistrict } from '../repository/api';
+import { getCasesByDistrict } from '../../repository/api';
 
 const CasesByDistrictChart = () => {
   const { data, isLoading, error } = useQuery('casesbydistrict', getCasesByDistrict);

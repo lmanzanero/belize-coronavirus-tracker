@@ -1,6 +1,6 @@
 import React from 'react'; 
 import { useQuery } from 'react-query';
-import { getCasesByTimeline } from '../repository/api';
+import { getCasesByTimeline } from '../../repository/api';
 
 const TimelineChart = () =>  {
   const { data, isLoading, error } = useQuery('timelinecases', getCasesByTimeline)

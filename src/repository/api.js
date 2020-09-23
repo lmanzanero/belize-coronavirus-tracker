@@ -18,7 +18,7 @@ const getCasesByGender = () => {
 }
 
 const getGithubContributors = () => {
-  return axios.get("https://api.github.com/repos/jxw1102/Projet-merou/contributors");
+  return axios.get("https://api.github.com/repos/lmanzanero/belize-coronavirus-tracker/contributors");
 }
 
 export { getCasesByDistrict, getCasesByGender, getApiData, getCasesByTimeline, getGithubContributors }
