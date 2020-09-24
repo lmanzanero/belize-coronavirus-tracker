@@ -11,10 +11,10 @@ export const GenderChart = () => {
       var casesByGenderPieChart = new Chart(ctx, {
         type: 'pie',
         data: {
-            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            labels: ['Male', "Female"],
             datasets: [{
                 label: '# of Votes',
-                data: [12, 19, 3, 5, 2, 3],
+                data: [926, 799],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.7)',
                     'rgba(54, 162, 235, 0.7)',

@@ -43,6 +43,6 @@ export default function BelizeMap ()  {
      }, [])
    
     return (
-        <div id="mapid"></div>
+       <div id="mapid"></div>
     );
 }
