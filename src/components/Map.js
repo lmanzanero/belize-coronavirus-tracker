@@ -2,11 +2,12 @@ import React, { useEffect } from 'react'
 import { useQuery } from 'react-query'
 import { getApiData } from '../repository/api'
 import L from 'leaflet'
+import virus from '../icons/virus.png';
 
 export default function BelizeMap ()  {
     const { data, isLoading, error } = useQuery('mapdata', getApiData);
      useEffect(() => {
-      var mymap = L.map('mapid').setView([51.505, -0.09], 13);
+      var mymap = L.map('mapid').setView([17.1899, -88.4976], 8);
 
       L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
         maxZoom: 18,
@@ -17,21 +18,16 @@ export default function BelizeMap ()  {
         tileSize: 512,
         zoomOffset: -1
       }).addTo(mymap);
+      let virusIcon = L.icon({
+        iconUrl: virus, 
+        iconSize:     [20, 20], // size of the icon 
+        iconAnchor:   [20, 20], // point of the icon which will correspond to marker's location 
+        popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+    });
+    
 
-      L.marker([51.5, -0.09]).addTo(mymap)
-        .bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
-
-      L.circle([51.508, -0.11], 500, {
-        color: 'red',
-        fillColor: '#f03',
-        fillOpacity: 0.5
-      }).addTo(mymap).bindPopup("I am a circle.");
-
-      L.polygon([
-        [51.509, -0.08],
-        [51.503, -0.06],
-        [51.51, -0.047]
-      ]).addTo(mymap).bindPopup("I am a polygon.");
+      L.marker([17.1899, -88.4976], {icon: virusIcon}).addTo(mymap)
+        .bindPopup("<b>Coronavirus Case: 🦠</b>").openPopup();
 
 
       var popup = L.popup();
@@ -47,6 +43,6 @@ export default function BelizeMap ()  {
      }, [])
    
     return (
-      <div id="mapid"></div>
+        <div id="mapid"></div>
     );
 }

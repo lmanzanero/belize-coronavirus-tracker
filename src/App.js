@@ -19,41 +19,16 @@ import GenderChart from './components/charts/GenderChart';
 import { useQuery } from 'react-query';
 import { getApiData } from './repository/api';
 
-export const App = () => {
-  // const [ chartData, setChartData ] = useState(null);
-  // const [ lineChartData, setLineChartData ] = useState(null);
-  // const [ genderData, setGenderData ] = useState(null);
-  // const [ apiData, setApiData ] = useState({});
-  const { data, isLoading, status, error } = useQuery('latestdata', getApiData);   
-  //  state = {
-  //   chartData: props.chartData,
-  //   lineChartData: props.lineChartData,
-  //   genderData: props.chartData,
-  //   apiData: [],
-  //   groupMonths: [],
-  //   activeCases: 0,
-  //   deaths: 0,
-  //   confirmedCases: 0,
-  //   recovered: 0,
-  //   lastUpdated: ''
-  // }
-  // ReactGA.initialize('UA-175547717-1');
-  // ReactGA.pageview(window.location.pathname + window.location.search);
-
-  // this.getChartData();
-  //   this.getChartLineData(); 
-
- 
-   
- 
- 
- 
+export const App = () => { 
+  const { data, isLoading, status, error } = useQuery('latestdata', getApiData);    
+  ReactGA.initialize('UA-175547717-1');
+  ReactGA.pageview(window.location.pathname + window.location.search); 
     return (
       <div className="App">
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h1><span className="virus">🦠</span> Belize Coronavirus (covid-19) cases and live updates <span className="virus">🦠</span></h1>
-          <h4>🇧🇿 Total Cases: {isLoading ? 'loading...' : data.data[0].confirmed} 🇧🇿 <br/> <span>Last Updated: { isLoading ? 'loading...' : Date(Number(data.data[0].lastUpdate))}</span></h4>
+          <h4>🇧🇿 Total Cases: {isLoading ? 'loading...' : data.data[0].confirmed} 🇧🇿 <br/><br/> <span>Last Updated: { isLoading ? 'loading...' : Date(Number(data.data[0].lastUpdate))}</span></h4>
           <div className="screening-data">
             <div className="btn">
                <p>Test Done</p>
@@ -93,11 +68,11 @@ export const App = () => {
           </div>
         </div>
         <div className="grid-2">
-          <Chart /> 
-          <TimelineChart/>
+          <Chart/> 
+          <GenderChart/>  
         </div>
         <div className="grid-2"> 
-          <GenderChart name="gender1" />  
+          <TimelineChart/>  
           <Chart /> 
         </div>
         <div className="map-container"> 

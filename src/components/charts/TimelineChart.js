@@ -4,6 +4,7 @@ import { getCasesByTimeline } from '../../repository/api';
 
 const TimelineChart = () =>  {
   const { data, isLoading, error } = useQuery('timelinecases', getCasesByTimeline)
+  console.log(data);
     return (
       <div className="chart"> 
           <div className="chart-inner">

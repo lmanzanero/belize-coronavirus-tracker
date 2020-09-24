@@ -7,7 +7,7 @@ const CasesByDistrictChart = () => {
   const { data, isLoading, error } = useQuery('casesbydistrict', getCasesByDistrict);  
   useEffect(() => { 
     if(isLoading) {    
-      console.log("loading...")
+      // console.log("loading...")
     }  else { 
       const loadedData = data.data.features.map(district => { 
         let casesByDistrict = {
@@ -18,8 +18,7 @@ const CasesByDistrictChart = () => {
        });;   
 
       const districts = loadedData.map(district => district.name);
-      const districtCases = loadedData.map(district => district.value);
-      console.log(loadedData.map(district => district.name)); 
+      const districtCases = loadedData.map(district => district.value); 
     var ctx = document.getElementById('casesByDistrict');  
     var casesByGenderPieChart = new Chart(ctx, {
       type: 'bar',
@@ -56,7 +55,12 @@ const CasesByDistrictChart = () => {
               }]
           },
           maintainAspectRatio: false,
-          responsive: true
+          responsive: true,
+          title: {
+            display: true,
+            text: 'Cases by District',
+            fontSize: 30
+          }
       }
   });
 } 
