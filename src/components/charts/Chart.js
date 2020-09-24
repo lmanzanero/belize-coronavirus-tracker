@@ -1,29 +1,43 @@
 import React, { useEffect } from 'react'; 
 import { useQuery } from 'react-query';
 import { getCasesByDistrict } from '../../repository/api';
-import Chart from 'chart.js';
+import Chart from 'chart.js'; 
 
 const CasesByDistrictChart = () => {
-  const { data, isLoading, error } = useQuery('casesbydistrict', getCasesByDistrict);
-  useEffect(() => {
-    var ctx = document.getElementById('casesByDistrict');
+  const { data, isLoading, error } = useQuery('casesbydistrict', getCasesByDistrict);  
+  useEffect(() => { 
+    if(isLoading) {    
+      console.log("loading...")
+    }  else { 
+      const loadedData = data.data.features.map(district => { 
+        let casesByDistrict = {
+          name: district.attributes.district,
+          value: district.attributes.value
+        } 
+        return casesByDistrict;
+       });;   
+
+      const districts = loadedData.map(district => district.name);
+      const districtCases = loadedData.map(district => district.value);
+      console.log(loadedData.map(district => district.name)); 
+    var ctx = document.getElementById('casesByDistrict');  
     var casesByGenderPieChart = new Chart(ctx, {
       type: 'bar',
       data: {
-          labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+          labels: districts,
           datasets: [{
-              label: '# of Votes',
-              data: [12, 19, 3, 5, 2, 3],
+              label: 'Cases',
+              data: districtCases,
               backgroundColor: [
-                  'rgba(255, 99, 132, 0.2)',
-                  'rgba(54, 162, 235, 0.2)',
-                  'rgba(255, 206, 86, 0.2)',
-                  'rgba(75, 192, 192, 0.2)',
-                  'rgba(153, 102, 255, 0.2)',
-                  'rgba(255, 159, 64, 0.2)'
+                  'rgba(255, 99, 132, 0.7)',
+                  'rgba(54, 162, 235, 0.7)',
+                  'rgba(255, 206, 86, 0.7)',
+                  'rgba(75, 192, 192, 0.7)',
+                  'rgba(153, 102, 255, 0.7)',
+                  'rgba(255, 159, 64, 0.7)'
               ],
               borderColor: [
-                  'rgba(255, 99, 132, 1)',
+                  'rgba(255, 99, 132, )',
                   'rgba(54, 162, 235, 1)',
                   'rgba(255, 206, 86, 1)',
                   'rgba(75, 192, 192, 1)',
@@ -45,10 +59,14 @@ const CasesByDistrictChart = () => {
           responsive: true
       }
   });
-}, [])
+} 
+}, [isLoading]) 
+
+
+
   return (
+     
     <div className="chart">
-      {/* <div className={isLoading ? "chart-inner loading" : "chart-inner"}>  */}
       {isLoading ? <div className="loading-text">loading...</div> : ""}
       <div className={isLoading ? "chart-inner loading" : "chart-inner"} >  
         <canvas id="casesByDistrict"></canvas>

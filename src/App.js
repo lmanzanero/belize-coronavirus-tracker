@@ -25,7 +25,6 @@ export const App = () => {
   // const [ genderData, setGenderData ] = useState(null);
   // const [ apiData, setApiData ] = useState({});
   const { data, isLoading, status, error } = useQuery('latestdata', getApiData);   
-  console.log(data);
   //  state = {
   //   chartData: props.chartData,
   //   lineChartData: props.lineChartData,

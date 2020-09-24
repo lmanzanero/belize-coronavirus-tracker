@@ -5,7 +5,6 @@ import L from 'leaflet'
 
 export default function BelizeMap ()  {
     const { data, isLoading, error } = useQuery('mapdata', getApiData);
-    console.log("map data: ", data);
      useEffect(() => {
       var mymap = L.map('mapid').setView([51.505, -0.09], 13);
 
