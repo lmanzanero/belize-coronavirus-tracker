@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import logo from './icons/belize-flag.png';
 import virus from './icons/virus.png';
 import positive from './icons/positive.png';
@@ -18,6 +18,7 @@ import BelizeMap from './components/Map';
 import GenderChart from './components/charts/GenderChart';
 import { useQuery } from 'react-query';
 import { getApiData } from './repository/api';
+import DeathsTimelineChart from './components/charts/DeathsTimelineChart';
 
 export const App = () => { 
   const { data, isLoading, status, error } = useQuery('latestdata', getApiData);    
@@ -73,7 +74,7 @@ export const App = () => {
         </div>
         <div className="grid-2"> 
           <TimelineChart/>  
-          <Chart /> 
+          <DeathsTimelineChart/> 
         </div>
         <div className="map-container"> 
             <h1>View Cases on Map</h1>
