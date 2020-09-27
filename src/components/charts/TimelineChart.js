@@ -7,6 +7,7 @@ import Chart from 'chart.js';
 const TimelineChart = () =>  {
   const { data, isLoading, error } = useQuery('timelinecases', getCasesByTimeline)
   const months = ['January','February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  let cases = []
   
   useEffect(() => {
     var ctx = document.getElementById('casesByTimelineCart');
@@ -16,7 +17,7 @@ const TimelineChart = () =>  {
           labels: months,
           datasets: [{
               label: 'Cases',
-              data: [0, 926, 799],
+              data: [0, 0, 3, 18, 18, 24, 48, 1007, 1825],
               backgroundColor: [
                   'rgba(54, 162, 235, 0.5)',
                   'rgba(255, 99, 132, 0.7)',
@@ -24,7 +25,9 @@ const TimelineChart = () =>  {
                   'rgba(255, 206, 86, 0.7)',
                   'rgba(75, 192, 192, 0.7)',
                   'rgba(153, 102, 255, 0.7)',
-                  'rgba(255, 159, 64, 0.7)'
+                  'rgba(255, 159, 64, 0.7)',
+                  'rgba(255, 159, 64, 0.7)',
+                  'rgba(255, 100, 64, 0.7)'
               ],
               borderColor: [
                   'rgba(54, 162, 235, 0.7)',
@@ -33,6 +36,7 @@ const TimelineChart = () =>  {
                   'rgba(255, 206, 86, 1)',
                   'rgba(75, 192, 192, 1)',
                   'rgba(153, 102, 255, 1)',
+                  'rgba(255, 159, 64, 1)',
                   'rgba(255, 159, 64, 1)'
               ],
               borderWidth: 1,
@@ -74,8 +78,7 @@ const TimelineChart = () =>  {
 
     const getDataByMonth = async () => {
           const dataSet = await getDateFromData(); 
-          if(dataSet.length != 0) {
-            // const filterMonth = Math.max.apply(Math, dataSet.map(month => month.date)); 
+          if(dataSet.length != 0) { 
             const monthData = months.map((monthName, i) => {  
                 const monthCases = dataSet.filter(date => date.date === i); 
                 const filteredMonth = {
@@ -88,7 +91,9 @@ const TimelineChart = () =>  {
           }
     }
 
-    getDataByMonth().then(data => console.log(data));
+    getDataByMonth().then(data => { 
+        // console.log(data);
+    });
 
     return (
       <div className="chart"> 
