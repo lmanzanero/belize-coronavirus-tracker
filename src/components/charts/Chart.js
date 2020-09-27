@@ -54,6 +54,9 @@ const CasesByDistrictChart = () => {
                   }
               }]
           },
+          legend: {
+            display: false
+          },
           maintainAspectRatio: false,
           responsive: true,
           title: {

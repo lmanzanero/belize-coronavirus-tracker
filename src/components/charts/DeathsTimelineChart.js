@@ -4,7 +4,7 @@ import { getCasesByTimeline, getDeathsByTimeLine } from '../../repository/api';
 
 const DeathsTimelineChart = () =>  {
   const { data, isLoading, error } = useQuery('deathtimelinecases', getDeathsByTimeLine)
-  console.log(data);
+  // console.log(data);
     return (
       <div className="chart"> 
           <div className="chart-inner">

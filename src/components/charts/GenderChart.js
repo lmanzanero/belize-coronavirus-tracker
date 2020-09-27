@@ -5,7 +5,7 @@ import Chart from 'chart.js';
 
 export const GenderChart = () => {
   const { data, isLoading, error } = useQuery('getcasesbygender', getCasesByGender);
-  console.log(data);
+//   console.log(data);
   useEffect(() => {
       var ctx = document.getElementById('casesByGenderChart');
       var casesByGenderPieChart = new Chart(ctx, {
