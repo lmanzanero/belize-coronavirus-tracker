@@ -6,13 +6,14 @@ import Chart from 'chart.js';
 
 const TimelineChart = () =>  {
   const { data, isLoading, error } = useQuery('timelinecases', getCasesByTimeline)
+  const months = ['January','February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
   
   useEffect(() => {
     var ctx = document.getElementById('casesByTimelineCart');
     var casesByTimelineCart = new Chart(ctx, {
       type: 'line',
       data: {
-          labels: ['January','February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+          labels: months,
           datasets: [{
               label: 'Cases',
               data: [0, 926, 799],
@@ -74,8 +75,16 @@ const TimelineChart = () =>  {
     const getDataByMonth = async () => {
           const dataSet = await getDateFromData(); 
           if(dataSet.length != 0) {
-             const filteredMonth = await dataSet.filter(data => data.date === 3); 
-             return filteredMonth;
+            // const filterMonth = Math.max.apply(Math, dataSet.map(month => month.date)); 
+            const monthData = months.map((monthName, i) => {  
+                const monthCases = dataSet.filter(date => date.date === i); 
+                const filteredMonth = {
+                  [monthName]: monthCases.length === 0 ? 0 : Math.max.apply(Math, monthCases.map(month=> month.cases))
+                }
+                return filteredMonth;
+            });
+
+            return monthData;
           }
     }
 
