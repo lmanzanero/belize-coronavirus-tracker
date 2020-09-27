@@ -32,39 +32,39 @@ export const App = () => {
           <h4>🇧🇿 Total Cases: {isLoading ? 'loading...' : data.data[0].confirmed} 🇧🇿 <br/><br/> <span>Last Updated: { isLoading ? 'loading...' : Date(Number(data.data[0].lastUpdate))}</span></h4>
           <div className="screening-data">
             <div className="btn">
-               <p>Test Done</p>
+               <p className="title">Test Done</p>
                  <img src={swab} alt="Belize Coronavirus updates"/>
-               <p>5,855</p>
+               <p className="text">5,855</p>
             </div>
             <div className="btn">
-              <p>Under Investigation</p>
+              <p className="title">Under Investigation</p>
                <img src={search} alt="Belize Coronavirus under investigation"/>
-              <p>412</p>
+              <p className="text">412</p>
             </div>
             <div className="btn">
-              <p>Negative</p>
+              <p className="title">Negative</p>
                <img src={negative} alt="Belize negative cases"/>
-              <p>5,186</p>
+              <p className="text">5,186</p>
             </div>
             <div className="btn">
-              <p>Confirmed</p>
+              <p className="title">Confirmed</p>
                <img src={positive} alt="Belize Coronavirus confirmed"/>
-              <p> {isLoading ? 'loading...' : data.data[0].confirmed} </p>
+              <p className="text"> {isLoading ? 'loading...' : data.data[0].confirmed} </p>
             </div>
             <div className="btn">
-              <p>Deseased</p>
+              <p className="title">Deseased</p>
                <img src={death} alt="Belize Coronavirus deseased"/>
-               <p className="number"> {isLoading ? 'loading...' : data.data[0].deaths}</p>
+               <p className="text"> {isLoading ? 'loading...' : data.data[0].deaths}</p>
             </div>
             <div className="btn">
-              <p>Recovered</p>
+              <p className="title">Recovered</p>
                <img src={recovered} alt="Belize Coronavirus recovered"/>
-              <p> {isLoading ? 'loading...' : data.data[0].recovered}</p>
+              <p className="text"> {isLoading ? 'loading...' : data.data[0].recovered}</p>
             </div>
             <div className="btn">
-              <p>Active</p>
+              <p className="title">Active</p>
                <img src={active} alt="Belize Coronavirus Active cases"/>
-               <p> {isLoading ? 'loading...' : data.data[0].active}</p>
+               <p className="text"> {isLoading ? 'loading...' : data.data[0].active}</p>
             </div>
           </div>
         </div>
