@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "64bedcc4f01dea299bc39c1e8a9362b8",
+    "revision": "b04b0a15ba65bf9b9bc16832d5ef0424",
     "url": "/belize-coronavirus-tracker/index.html"
   },
   {
-    "revision": "dc8966c1aea930db9227",
+    "revision": "bc9420cb874873d43f64",
     "url": "/belize-coronavirus-tracker/static/css/main.f3223bbc.chunk.css"
   },
   {
-    "revision": "a83836647175211b9775",
-    "url": "/belize-coronavirus-tracker/static/js/2.8c6a67dd.chunk.js"
+    "revision": "505e062074fcd5004f8f",
+    "url": "/belize-coronavirus-tracker/static/js/2.7cff2832.chunk.js"
   },
   {
     "revision": "fe4d9656f8d5010525855e3acc17c296",
-    "url": "/belize-coronavirus-tracker/static/js/2.8c6a67dd.chunk.js.LICENSE.txt"
+    "url": "/belize-coronavirus-tracker/static/js/2.7cff2832.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "dc8966c1aea930db9227",
-    "url": "/belize-coronavirus-tracker/static/js/main.81ccaa08.chunk.js"
+    "revision": "bc9420cb874873d43f64",
+    "url": "/belize-coronavirus-tracker/static/js/main.001d64ee.chunk.js"
   },
   {
     "revision": "bb6c701cbadc24896382",
