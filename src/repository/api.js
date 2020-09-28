@@ -9,8 +9,10 @@ const getCasesByTimeline = () => {
   return axios.get("https://api.covid19api.com/total/dayone/country/belize/status/confirmed");
 }
 
-const getCasesByDay = () => {
-  return axios.get("https://services6.arcgis.com/8TOGEuvqHhwQHCke/arcgis/rest/services/MOH_Infographics_CountryIndicator/FeatureServer/0/query?f=json&where=1%3D1&returnGeometry=false&spatialRel=esriSpatialRelIntersects&outFields=ObjectId%2CConfirmed%2CDate&orderByFields=Date%20asc&resultOffset=0&resultRecordCount=32000&resultType=standard&cacheHint=true")
+
+
+const getCasesSinceDayOne = () => {
+  return axios.get("https://api.covid19api.com/dayone/country/belize/status/confirmed/live")
 }
 
 const getDeathsByTimeLine = () => {
@@ -34,6 +36,6 @@ export {
   getApiData, 
   getCasesByTimeline, 
   getDeathsByTimeLine,
-  getCasesByDay,
+  getCasesSinceDayOne,
   getGithubContributors 
 }

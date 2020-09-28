@@ -7,14 +7,13 @@ import Chart from 'chart.js';
 const TimelineChart = () =>  {
   const { data, isLoading, error } = useQuery('timelinecases', getCasesByTimeline)
   const months = ['January','February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-  let cases = []
   
   useEffect(() => {
     var ctx = document.getElementById('casesByTimelineCart');
     var casesByTimelineCart = new Chart(ctx, {
       type: 'line',
       data: {
-          labels: months,
+          labels: isLoading ? [] : months,
           datasets: [{
               label: 'Cases',
               data: [0, 0, 3, 18, 18, 24, 48, 1007, 1825],
@@ -30,7 +29,7 @@ const TimelineChart = () =>  {
                   'rgba(255, 100, 64, 0.7)'
               ],
               borderColor: [
-                  'rgba(54, 162, 235, 0.7)',
+                  'rgba(54, 162, 235, 0.9)',
                   'rgba(255, 99, 132, 1)',
                   'rgba(54, 162, 235, 1)',
                   'rgba(255, 206, 86, 1)',
@@ -58,12 +57,13 @@ const TimelineChart = () =>  {
           },
           title: {
               display: true,
-              text: 'Belize Coronavirus Curve',
+              text: 'Cases by Month',
               fontSize: 30
             }
       }
   });
-}, []) 
+}, [isLoading]) 
+
     const getDateFromData = async () => {
         const dataSet = isLoading ? [] : data.data.map(dayCases => {  
           let date = new Date(dayCases.Date);   
@@ -97,7 +97,8 @@ const TimelineChart = () =>  {
 
     return (
       <div className="chart"> 
-          <div className="chart-inner"> 
+          {isLoading ? <div className="loading-text">loading...</div> : ""}
+          <div className={isLoading ? "chart-inner loading" : "chart-inner"}> 
             <canvas id="casesByTimelineCart" style={{margin: 0, padding:0}}></canvas> 
           </div>
       </div>  
