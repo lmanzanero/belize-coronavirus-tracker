@@ -6,9 +6,9 @@ import moment from 'moment';
 
 
 export default function LiveTimelineChart() {
-  const { data, isLoading, error } = useQuery('timelinecases', getCasesSinceDayOne);
-  const months = ['January','February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-  console.log(data);
+  const { isLoading } = useQuery('timelinecases', getCasesSinceDayOne);
+  // const months = ['January','February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  // console.log(data);
   let color = Chart.helpers.color;
   useEffect(() => {
     let cfg = {

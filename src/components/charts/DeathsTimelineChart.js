@@ -1,9 +1,9 @@
 import React from 'react'; 
 import { useQuery } from 'react-query';
-import { getCasesByTimeline, getDeathsByTimeLine } from '../../repository/api';
+import {  getDeathsByTimeLine } from '../../repository/api';
 
 const DeathsTimelineChart = () =>  {
-  const { data, isLoading, error } = useQuery('deathtimelinecases', getDeathsByTimeLine)
+  const { isLoading } = useQuery('deathtimelinecases', getDeathsByTimeLine)
   // console.log(data);
     return (
       <div className="chart"> 

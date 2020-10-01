@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react' 
-import { useQuery } from 'react-query'
-import { getApiData } from '../repository/api'
+// import { useQuery } from 'react-query'
+// import { getApiData } from '../repository/api'
 import L from 'leaflet'
 import virus from '../icons/virus.png';
 
 export default function BelizeMap ()  {
-    const { data, isLoading, error } = useQuery('mapdata', getApiData);
+    // const { data, isLoading, error } = useQuery('mapdata', getApiData);
      useEffect(() => {
       var mymap = L.map('mapid').setView([17.1899, -88.4976], 8);
 

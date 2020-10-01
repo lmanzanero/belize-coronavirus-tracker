@@ -4,7 +4,7 @@ import { getCasesByDistrict } from '../../repository/api';
 import Chart from 'chart.js'; 
 
 const CasesByDistrictChart = () => {
-  const { data, isLoading, error } = useQuery('casesbydistrict', getCasesByDistrict);  
+  const { data, isLoading } = useQuery('casesbydistrict', getCasesByDistrict);  
   useEffect(() => { 
     if(isLoading) {    
       // console.log("loading...")

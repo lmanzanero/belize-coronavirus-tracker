@@ -1,6 +1,5 @@
-import React, { useEffect } from 'react';
-import logo from './icons/belize-flag.png';
-import virus from './icons/virus.png';
+import React from 'react';
+import logo from './icons/belize-flag.png'; 
 import positive from './icons/positive.png';
 import recovered from './icons/recovered.png';
 import negative from './icons/negative.png';
@@ -12,8 +11,7 @@ import './App.css';
 import Chart from './components/charts/Chart';
 import TimelineChart from './components/charts/TimelineChart';
 import { Footer } from './components/Footer'; 
-import ReactGA from 'react-ga';
-import axios from 'axios';
+import ReactGA from 'react-ga'; 
 import BelizeMap from './components/Map';
 import GenderChart from './components/charts/GenderChart';
 import { useQuery } from 'react-query';
@@ -22,14 +20,14 @@ import DeathsTimelineChart from './components/charts/DeathsTimelineChart';
 import LiveTimelineChart from './components/charts/LiveTimelineChart';
 
 export const App = () => { 
-  const { data, isLoading, status, error } = useQuery('latestdata', getApiData);    
+  const { data, isLoading } = useQuery('latestdata', getApiData);    
   ReactGA.initialize('UA-175547717-1');
   ReactGA.pageview(window.location.pathname + window.location.search); 
     return (
       <div className="App">
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1><span className="virus">🦠</span> Belize Coronavirus (covid-19) cases and live updates <span className="virus">🦠</span></h1>
+          <h1><span className="virus" role="img" aria-label="virus">🦠</span> Belize Coronavirus (covid-19) cases and live updates <span className="virus" role="img" aria-label="virus">🦠</span></h1>
           <h4>🇧🇿 Total Cases: {isLoading ? 'loading...' : data.data[0].confirmed} 🇧🇿 <br/><br/> <span>Last Updated: { isLoading ? 'loading...' : Date(Number(data.data[0].lastUpdate))}</span></h4>
           <div className="screening-data">
             <div className="btn">
