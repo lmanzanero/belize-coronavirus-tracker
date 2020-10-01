@@ -164,20 +164,20 @@ export default function LiveTimelineChart() {
   return (
     <div className={`chart ${isLoading ? 'loading' : ''}`}>  
       <div className="chart-inner">  
-        <canvas id="liveCasesByTimelineCart" style={{margin: 0, padding:0}}></canvas> 
+        <canvas id="liveCasesByTimelineCart" style={{margin: '0', padding:0}}></canvas> 
 				<div>
-				<select id="type">
-					<option value="line">Line</option>
-					<option value="bar">Bar</option>
-				</select>
-				<select id="unit" defaultChecked>
-					<option value="second">Second</option>
-					<option value="minute">Minute</option>
-					<option value="hour">Hour</option>
-					<option value="day" checked>Day</option>
-					<option value="month">Month</option>
-					<option value="year">Year</option>
-				</select>
+					<select id="type">
+						<option value="line">Line</option>
+						<option value="bar">Bar</option>
+					</select>
+					<select id="unit" defaultChecked>
+						<option value="second">Second</option>
+						<option value="minute">Minute</option>
+						<option value="hour">Hour</option>
+						<option value="day" checked>Day</option>
+						<option value="month">Month</option>
+						<option value="year">Year</option>
+					</select>
 				</div>
       </div>
     </div>  
