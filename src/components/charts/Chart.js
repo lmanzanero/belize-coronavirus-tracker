@@ -73,10 +73,9 @@ const CasesByDistrictChart = () => {
 
   return (
      
-    <div className="chart">
-      {isLoading ? <div className="loading-text">loading...</div> : ""}
-      <div className={isLoading ? "chart-inner loading" : "chart-inner"} >  
-        <canvas id="casesByDistrict"></canvas>
+    <div className={`chart ${isLoading ? 'loading' : ''}`}>  
+      <div className="chart-inner">   
+      <canvas id="casesByDistrict"></canvas>
       </div>    
     </div>
   ); 

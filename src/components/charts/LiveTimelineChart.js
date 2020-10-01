@@ -162,10 +162,8 @@ export default function LiveTimelineChart() {
  
 
   return (
-    <div className="chart"> 
-      {isLoading ? <div className="loading-text">loading...</div> : ""}
-      <div className={isLoading ? "chart-inner loading" : "chart-inner"}> 
-        <h4 className="loading-text">Feature coming soon...</h4>
+    <div className={`chart ${isLoading ? 'loading' : ''}`}>  
+      <div className="chart-inner">  
         <canvas id="liveCasesByTimelineCart" style={{margin: 0, padding:0}}></canvas> 
 				<div>
 				<select id="type">

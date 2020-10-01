@@ -39,6 +39,7 @@
   padding: 0;
   height: 100%;
   width: 100%; 
+  transition: all 1s;
 }
 
 .grid-2 {
@@ -57,22 +58,22 @@
   width: 100%;
   margin: 0; 
   padding: 0;
-  border-radius: 0.5em;
+  border-radius: 0.5em; 
   background-color: #222;
   box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
 }
 
-.chart .chart-inner.loading{
+.chart.loading{ 
   -webkit-filter: blur(10px);
   -moz-filter: blur(10px);
   -o-filter: blur(10px);
   -ms-filter: blur(10px);
-  filter: blur(10px);  
+  filter: blur(10px);    
 }
 
-.chart .loading-text {
-  z-index: 99999;
+.chart #loading-text {
   position: absolute;
+  z-index: 99999;
   top: 50%;
   left: 40%;
   font-size: 1.5em; 
@@ -170,7 +171,7 @@
   position: relative;
   border: 1px solid #29323c;
   margin: 1em;  
-  height: 320px;
+  height: 35vh;
   overflow-y: scroll !important;
 }
 
@@ -274,13 +275,13 @@
   }
 
   .affected-areas {
-    height: 200px;
+    height: 100px;
   }
 
   .affected-areas .district-area {
     padding: 2px;
     margin: 5px;
-    font-size: 12px;
+    font-size: 10px;
   }
 
   .districts-row .district {
@@ -289,7 +290,7 @@
  
   .map-container .map-container-inner {
     display: grid;
-    grid-template-columns: 1fr;
-    grid-gap: 1em;   
+    grid-template-columns: 1fr; 
+    grid-gap: 0em;   
   }
 }

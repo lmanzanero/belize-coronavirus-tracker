@@ -6,7 +6,7 @@ const DeathsTimelineChart = () =>  {
   const { isLoading } = useQuery('deathtimelinecases', getDeathsByTimeLine)
   // console.log(data);
     return (
-      <div className="chart"> 
+      <div className={`chart ${isLoading ? 'loading' : ''}`}> 
           <div className="chart-inner">
             { isLoading ? 'loading...' : 'data'}
           </div>
