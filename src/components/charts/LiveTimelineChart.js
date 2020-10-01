@@ -26,6 +26,8 @@ export default function LiveTimelineChart() {
 				}]
 			},
 			options: {
+				maintainAspectRatio: false,
+        responsive: true,
 				animation: {
 					duration: 0
 				},
@@ -165,20 +167,20 @@ export default function LiveTimelineChart() {
       <div className={isLoading ? "chart-inner loading" : "chart-inner"}> 
         <h4 className="loading-text">Feature coming soon...</h4>
         <canvas id="liveCasesByTimelineCart" style={{margin: 0, padding:0}}></canvas> 
-      </div>
-      <div>
-      <select id="type">
-        <option value="line">Line</option>
-        <option value="bar">Bar</option>
-      </select>
-      <select id="unit" defaultChecked>
-        <option value="second">Second</option>
-        <option value="minute">Minute</option>
-        <option value="hour">Hour</option>
-        <option value="day" checked>Day</option>
-        <option value="month">Month</option>
-        <option value="year">Year</option>
-      </select>
+				<div>
+				<select id="type">
+					<option value="line">Line</option>
+					<option value="bar">Bar</option>
+				</select>
+				<select id="unit" defaultChecked>
+					<option value="second">Second</option>
+					<option value="minute">Minute</option>
+					<option value="hour">Hour</option>
+					<option value="day" checked>Day</option>
+					<option value="month">Month</option>
+					<option value="year">Year</option>
+				</select>
+				</div>
       </div>
     </div>  
   )

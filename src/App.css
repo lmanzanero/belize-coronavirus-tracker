@@ -112,28 +112,92 @@
 .screening-data .btn img {
   margin: auto;
   width: 30px;
-  height: 30px;
+  height: 30px; 
 }
 
-.map-container { 
+.map-container {   
   margin: 1em;
+  border-radius: 1em;
+  background-color: #222;
+  box-shadow: 0px 3px 15px rgba(0,0,0,0.2); 
+  height: 500px; 
   overflow: hidden;
 }
 
-.conatiner {
+.paper-title {
+  display: inline-block;
+  background-color: #222;
+  border: 1px solid #29323c;
+  color: #7f8081;
+  padding: 0.3em;
+  border-radius: 0.3em; 
+  font-size:3vw;
+  text-align: center;
+  box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+}
+
+.districts-row {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 auto; 
+}
+
+.districts-row .district {
+  width: auto;
+  background-color: #29323c;
+  padding: 0.5em;
+  margin: auto;
+  border-radius: 0.3em;
+  color: #7f8081;
+  box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+  transition: all 0.5s;
+  font-size:1vw;
+  cursor: pointer;
+}
+
+.districts-row .district:hover {
+  color: #222;
+  background-color: burlywood;
+  border: 1px solid #222;
+  transform: scale(1.1);
+  box-shadow: 0px 3px 15px rgba(0,0,0,0.5);
+  transition: all 0.5s;
+} 
+
+.affected-areas {
+  position: relative;
+  border: 1px solid #29323c;
+  margin: 1em;  
+  height: 320px;
+  overflow-y: scroll !important;
+}
+
+.affected-areas .district-area { 
+  overflow: hidden;
+  margin: 1em;
+  padding: 0.5em;
+  border-radius: 0.3em;
+  box-shadow: 0px 3px 15px rgba(0,0,0,0.1);
+  background-color: #29323c;
+  cursor: pointer;
+}
+
+.container {
   position: relative;
   margin: 1em; 
   height: 100vh;
 }
 
-.conatiner .chart .chart-inner {
+.container .chart .chart-inner {
   height: 100%;
 }
 
 .map-container .map-container-inner {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 1em;
+  grid-gap: 1em;  
 }
 
 #mapid { 
@@ -204,5 +268,28 @@
 
   .chart .chart-inner {
    height: 500px; 
+  }
+  .map-container {
+    height: 98vh;
+  }
+
+  .affected-areas {
+    height: 200px;
+  }
+
+  .affected-areas .district-area {
+    padding: 2px;
+    margin: 5px;
+    font-size: 12px;
+  }
+
+  .districts-row .district {
+    font-size: 2.5vw;
+  }
+ 
+  .map-container .map-container-inner {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 1em;   
   }
 }

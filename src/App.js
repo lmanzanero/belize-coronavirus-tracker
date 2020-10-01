@@ -75,16 +75,34 @@ export const App = () => {
           <TimelineChart/>  
           <DeathsTimelineChart/> 
         </div>
-        <div className="conatiner">
+        <div className="container">
           <LiveTimelineChart/>
         </div>
         <div className="map-container"> 
-            <h1>View Cases on Map</h1>
             <div className="map-container-inner">
-              <BelizeMap/> 
               <div>
-                <h4>Cases By District</h4>
+                <h1 className="paper-title">View Cases on Map</h1>
+                <div className="districts-row">
+                  <div className="district">Corozal</div>
+                  <div className="district">Belize</div>
+                  <div className="district">Orange Walk</div>
+                  <div className="district">Cayo</div>
+                  <div className="district">Stran Creek</div>
+                  <div className="district">Toledo</div>
+                </div>
+                <div className="affected-areas">
+                    <div className="district-area">San Ignacio <span className="virus" role="img" aria-label="virus">🦠</span></div>
+                    <div className="district-area">San Ignacio <span className="virus" role="img" aria-label="virus">🦠</span></div>
+                    <div className="district-area">San Ignacio <span className="virus" role="img" aria-label="virus">🦠</span></div>
+                    <div className="district-area">San Ignacio <span className="virus" role="img" aria-label="virus">🦠</span></div>
+                    <div className="district-area">San Ignacio <span className="virus" role="img" aria-label="virus">🦠</span></div>
+                    <div className="district-area">San Ignacio <span className="virus" role="img" aria-label="virus">🦠</span></div>
+                    <div className="district-area">San Ignacio <span className="virus" role="img" aria-label="virus">🦠</span></div>
+                    <div className="district-area">San Ignacio <span className="virus" role="img" aria-label="virus">🦠</span></div>
+                    <div className="district-area">San Ignacio <span className="virus" role="img" aria-label="virus">🦠</span></div>
+                </div>
               </div>
+              <BelizeMap/> 
             </div>
         </div> 
         <Footer/>
