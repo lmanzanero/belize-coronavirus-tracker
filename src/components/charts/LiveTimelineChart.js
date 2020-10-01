@@ -22,7 +22,7 @@ export default function LiveTimelineChart() {
 					pointRadius: 0,
 					fill: false,
 					lineTension: 0,
-					borderWidth: 2
+					borderWidth: 4
 				}]
 			},
 			options: {
@@ -31,6 +31,14 @@ export default function LiveTimelineChart() {
 				animation: {
 					duration: 0
 				},
+				title :{
+					display: true,
+					text: 'Belize 🦠 Coronavirus 🦠 Curve',
+					fontSize: 30
+				},
+				legend: { 
+					display: false
+			}, 
 				scales: {
 					xAxes: [{
 						type: 'time',
