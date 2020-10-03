@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useQuery } from 'react-query';
 import Chart from 'chart.js'
-import { getConfirmedCasesSinceDayOne, getRecoveredCasesSinceDayOne, getDeathCasesSinceDayOne } from '../../repository/api';
+import { getConfirmedCasesSinceDayOne, getRecoveredCasesSinceDayOne, getDeathCasesSinceDayOne, getTotalAllStatusCases } from '../../repository/api';
 import moment from 'moment';   
 
 
@@ -9,15 +9,28 @@ export default function LiveTimelineChart() {
 	const { data, isLoading } = useQuery('livetimelinecases', getConfirmedCasesSinceDayOne); 
 	const { data: recoveredData, isLoading: recoveredLoading } = useQuery('livetimelinerecoveredcases', getRecoveredCasesSinceDayOne); 
 	const { data: deathsData, isLoading: deathsLoading } = useQuery('livetimelinedeathscases', getDeathCasesSinceDayOne); 
+	const { data: activeData, isLoading: activeLoading } = useQuery('activecases', getTotalAllStatusCases);
+
 	
   useEffect(() => { 
     let cfg = {
 			data: {
 				datasets: [{
-					label: ' 🦠 Confirmed',
+					label: ' ✅ Confirmed',
+					backgroundColor: '#81B622',
+					borderColor: '#81B622',
+					data: cleanUpData(data),
+					type: 'line',
+					pointRadius: 0,
+					fill: false,
+					lineTension: 0,
+					borderWidth: 4
+				},
+				{
+					label: ' 🦠 Active',
 					backgroundColor: '#f6cd61',
 					borderColor: '#f6cd61',
-					data: cleanUpData(data),
+					data: cleanUpActiveData(data),
 					type: 'line',
 					pointRadius: 0,
 					fill: false,
@@ -133,9 +146,22 @@ export default function LiveTimelineChart() {
 			}
 		}
 
-	if(!isLoading || !recoveredLoading || !deathsLoading){ 
+	if(!isLoading && !recoveredLoading && !deathsLoading && !activeLoading){ 
 		let ctx = document.getElementById('liveCasesByTimelineCart');
 		let liveCasesByTimelineCart = new Chart(ctx, cfg);
+	}
+
+	function cleanUpActiveData(dataSrc) {  
+		if(activeData){
+			const data = activeData.data.map(cases => {
+				const chartData = {
+					t: new Date(cases.Date).getTime(),
+					y: `${cases.Active}`
+				}
+				return chartData;
+			});
+			return data;
+		}
 	}
       
 	 function cleanUpData(dataSrc) {
@@ -145,13 +171,14 @@ export default function LiveTimelineChart() {
 						t: new Date(cases.Date).getTime(),
 						y: `${cases.Cases}`
 				}
-				return chartData
+				return chartData;
 			}) 
 			return dataArr;
 		} 
 	}  
 
-}, [isLoading, recoveredLoading, deathsLoading]);
+
+}, [isLoading, recoveredLoading, deathsLoading, activeLoading]);
 
 	return (
     <div className={`chart ${isLoading || recoveredLoading || deathsLoading ? 'loading' : ''}`}>  

@@ -5,6 +5,10 @@ const getApiData = () => {
   return axios.get("https://covid19.mathdro.id/api/countries/belize/confirmed");
 }
 
+const getTotalAllStatusCases = () => {
+  return axios.get("https://api.covid19api.com/total/country/belize");
+}
+
 const getCasesByTimeline = () => {
   return axios.get("https://api.covid19api.com/total/dayone/country/belize/status/confirmed");
 }
@@ -40,6 +44,7 @@ export {
   getCasesByDistrict, 
   getCasesByGender, 
   getApiData, 
+  getTotalAllStatusCases,
   getCasesByTimeline, 
   getDeathsByTimeLine,
   getDeathCasesSinceDayOne,
