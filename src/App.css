@@ -188,7 +188,7 @@
 .container {
   position: relative;
   margin: 1em; 
-  height: 100vh;
+  height: 80vh;
 }
 
 .container .chart .chart-inner {

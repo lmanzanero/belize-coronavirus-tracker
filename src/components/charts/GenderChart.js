@@ -4,9 +4,11 @@ import { getCasesByGender } from '../../repository/api';
 import Chart from 'chart.js';
 
 export const GenderChart = () => {
-  const { isLoading } = useQuery('getcasesbygender', getCasesByGender);
-//   console.log(data);
+  const { data, isLoading } = useQuery('getcasesbygender', getCasesByGender);
   useEffect(() => {
+    if(!data) return 
+    
+     const { confirmale, confirmfemale } = data.data.features[0].attributes; 
       var ctx = document.getElementById('casesByGenderChart');
       var casesByGenderPieChart = new Chart(ctx, {
         type: 'pie',
@@ -14,7 +16,7 @@ export const GenderChart = () => {
             labels: ['Male', "Female"],
             datasets: [{
                 label: '# of Votes',
-                data: [926, 799],
+                data: [confirmale, confirmfemale],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.7)',
                     'rgba(54, 162, 235, 0.7)',
@@ -54,7 +56,8 @@ export const GenderChart = () => {
               }
         }
     });
-  }, [])
+  }, [isLoading])
+
   return (
     <div className={`chart ${isLoading ? 'loading' : ''}`}> 
       <div className="chart-inner"> 

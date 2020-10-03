@@ -1,29 +1,52 @@
 import React, { useEffect } from 'react';
 import { useQuery } from 'react-query';
 import Chart from 'chart.js'
-import { getCasesSinceDayOne } from '../../repository/api';
+import { getConfirmedCasesSinceDayOne, getRecoveredCasesSinceDayOne, getDeathCasesSinceDayOne } from '../../repository/api';
 import moment from 'moment';   
 
 
 export default function LiveTimelineChart() {
-  const { data, isLoading } = useQuery('timelinecases', getCasesSinceDayOne);
-  // const months = ['January','February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-	let color = Chart.helpers.color;
+	const { data, isLoading } = useQuery('livetimelinecases', getConfirmedCasesSinceDayOne); 
+	const { data: recoveredData, isLoading: recoveredLoading } = useQuery('livetimelinerecoveredcases', getRecoveredCasesSinceDayOne); 
+	const { data: deathsData, isLoading: deathsLoading } = useQuery('livetimelinedeathscases', getDeathCasesSinceDayOne); 
 	
   useEffect(() => { 
     let cfg = {
 			data: {
 				datasets: [{
-					label: ' 🦠 Cases',
-					backgroundColor: color('red').alpha(0.5).rgbString(),
-					borderColor: 'rgba(54, 162, 235, 0.5)',
-					data: cleanUpData(),
+					label: ' 🦠 Confirmed',
+					backgroundColor: '#f6cd61',
+					borderColor: '#f6cd61',
+					data: cleanUpData(data),
 					type: 'line',
 					pointRadius: 0,
 					fill: false,
 					lineTension: 0,
 					borderWidth: 4
-				}]
+				},
+				{
+					label: ' 🥳 Recovered',
+					backgroundColor: '#0e9aa7',
+					borderColor: '#0e9aa7',
+					data: cleanUpData(recoveredData),
+					type: 'line',
+					pointRadius: 0,
+					fill: false,
+					lineTension: 0,
+					borderWidth: 4
+				},
+				{
+					label: ' ☠️ Deaths',
+					backgroundColor: '#fe8a71',
+					borderColor: '#fe8a71',
+					data: cleanUpData(deathsData),
+					type: 'line',
+					pointRadius: 0,
+					fill: false,
+					lineTension: 0,
+					borderWidth: 4
+				},
+			]
 			},
 			options: {
 				maintainAspectRatio: false,
@@ -37,7 +60,8 @@ export default function LiveTimelineChart() {
 					fontSize: 30
 				},
 				legend: { 
-					display: false
+					display: true,
+					position: 'bottom',
 			}, 
 				scales: {
 					xAxes: [{
@@ -55,8 +79,7 @@ export default function LiveTimelineChart() {
 							maxRotation: 0,
 							sampleSize: 100
 						},
-						afterBuildTicks: function(scale, ticks) {
-							console.log(ticks[0].value);
+						afterBuildTicks: function(scale, ticks) { 
 							let majorUnit = scale._majorUnit;
 							let firstTick = ticks[0];
 							let i, ilen, val, tick, currMajor, lastMajor;
@@ -89,7 +112,7 @@ export default function LiveTimelineChart() {
 						},
 						scaleLabel: {
 							display: true,
-							labelString: '# of 🦠 cases'
+							labelString: '🦠 cases'
 						}
 					}]
 				},
@@ -110,14 +133,14 @@ export default function LiveTimelineChart() {
 			}
 		}
 
-	if(!isLoading){ 
+	if(!isLoading || !recoveredLoading || !deathsLoading){ 
 		let ctx = document.getElementById('liveCasesByTimelineCart');
 		let liveCasesByTimelineCart = new Chart(ctx, cfg);
 	}
       
-	 function cleanUpData() {
-		if(data){
-			const dataArr = data.data.map(cases => { 
+	 function cleanUpData(dataSrc) {
+		  if(dataSrc){ 
+			  const dataArr = dataSrc.data.map(cases => { 
 				const chartData = {
 						t: new Date(cases.Date).getTime(),
 						y: `${cases.Cases}`
@@ -128,10 +151,10 @@ export default function LiveTimelineChart() {
 		} 
 	}  
 
-}, [isLoading]);
+}, [isLoading, recoveredLoading, deathsLoading]);
 
 	return (
-    <div className={`chart ${isLoading ? 'loading' : ''}`}>  
+    <div className={`chart ${isLoading || recoveredLoading || deathsLoading ? 'loading' : ''}`}>  
       <div className="chart-inner">  
         <canvas id="liveCasesByTimelineCart" style={{margin: '0', padding:0}}></canvas> 
 				<div>

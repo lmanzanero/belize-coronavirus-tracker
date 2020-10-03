@@ -9,10 +9,16 @@ const getCasesByTimeline = () => {
   return axios.get("https://api.covid19api.com/total/dayone/country/belize/status/confirmed");
 }
 
+const getDeathCasesSinceDayOne = () => {
+  return axios.get("https://api.covid19api.com/country/belize/status/deaths/live")
+}
 
+const getRecoveredCasesSinceDayOne = () => {
+  return axios.get("https://api.covid19api.com/country/belize/status/recovered/live")
+}
 
-const getCasesSinceDayOne = () => {
-  return axios.get("https://api.covid19api.com/dayone/country/belize/status/confirmed/live")
+const getConfirmedCasesSinceDayOne = () => {
+  return axios.get("https://api.covid19api.com/country/belize/status/confirmed/live")
 }
 
 const getDeathsByTimeLine = () => {
@@ -36,6 +42,8 @@ export {
   getApiData, 
   getCasesByTimeline, 
   getDeathsByTimeLine,
-  getCasesSinceDayOne,
+  getDeathCasesSinceDayOne,
+  getRecoveredCasesSinceDayOne,
+  getConfirmedCasesSinceDayOne,
   getGithubContributors 
 }
