@@ -1,9 +1,9 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Covid-19.bz",
+  "name": "Belize Coronavirus Tracker",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "belize-flag.png",
       "sizes": "192x192",
       "type": "image/png"
     }
