@@ -8,7 +8,7 @@ const DeathsTimelineChart = () =>  {
     return (
       <div className={`chart ${isLoading ? 'loading' : ''}`}> 
           <div className="chart-inner">
-            { isLoading ? 'loading...' : 'data'}
+            { isLoading ? 'loading...' : 'Cases by Day'}
           </div>
       </div>  
     ); 

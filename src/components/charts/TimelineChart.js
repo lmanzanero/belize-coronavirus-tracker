@@ -57,7 +57,7 @@ const TimelineChart = () =>  {
           },
           title: {
               display: true,
-              text: 'Cases by Month',
+              text: 'Total Cases by Month',
               fontSize: 30
             }
       }

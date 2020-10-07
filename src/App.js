@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import logo from './icons/belize-flag.png'; 
 import positive from './icons/positive.png';
 import recovered from './icons/recovered.png';
@@ -19,10 +19,87 @@ import { getApiData } from './repository/api';
 import DeathsTimelineChart from './components/charts/DeathsTimelineChart';
 import LiveTimelineChart from './components/charts/LiveTimelineChart';
 
+const affectedVillagesData = [
+  {
+    name: 'corozal',
+    formatted_name: 'Corozal',
+    data : [
+      {
+        0: 'corozal village 1',
+        1: 'corozal village 2',
+        2: 'corozal village 3'
+      }
+  ] 
+  },
+  {
+    name: 'orangewalk',
+    formatted_name: 'Orange Walk',
+    data : [
+      {
+        0: 'orange walk village 1',
+        1: 'orange walk village 2',
+        2: 'orange walk village 3'
+      }
+  ] 
+  },
+  {
+    name: 'belize',
+    formatted_name: 'Belize',
+    data : [
+      {
+        0: 'belize village 1',
+        1: 'belize village 2',
+        2: 'belize village 3'
+      }
+  ] 
+  },
+  {
+    name: 'cayo',
+    formatted_name: 'Cayo',
+    data : [
+      {
+        0: 'cayo village 1',
+        1: 'cayo village 2',
+        2: 'cayo village 3'
+      }
+  ] 
+  },
+  {
+    name: 'stanncreek',
+    formatted_name: 'Stann Creek',
+    data : [
+      {
+        0: 'stann creek village 1',
+        1: 'stann creek village 2',
+        2: 'stann creek village 3'
+      }
+  ] 
+  },
+  {
+    name: 'toledo',
+    formatted_name: 'Toledo',
+    data : [
+      {
+        0: 'toledo village 1',
+        1: 'toledo village 2',
+        2: 'toledo village 3'
+      }
+  ] 
+  }
+];
+
 export const App = () => { 
   const { data, isLoading } = useQuery('latestdata', getApiData);    
-  ReactGA.initialize('UA-175547717-1');
-  ReactGA.pageview(window.location.pathname + window.location.search); 
+
+  useEffect(() => { 
+    ReactGA.initialize('UA-175547717-1');
+    ReactGA.pageview(window.location.pathname + window.location.search); 
+  }, [isLoading])
+
+  const getVillages = (e) => {  
+    const districtData = affectedVillagesData.filter(district => district.name === e.target.getAttribute('data-value'));
+  }
+
     return (
       <div className="App">
         <div className="App-header">
@@ -83,12 +160,12 @@ export const App = () => {
               <div>
                 <h1 className="paper-title">View Cases on Map</h1>
                 <div className="districts-row">
-                  <div className="district">Corozal</div>
-                  <div className="district">Belize</div>
-                  <div className="district">Orange Walk</div>
-                  <div className="district">Cayo</div>
-                  <div className="district">Stran Creek</div>
-                  <div className="district">Toledo</div>
+                  <div className="district" onClick={(e) => getVillages(e)} data-value="corozal">Corozal</div>
+                  <div className="district" onClick={(e) => getVillages(e)} data-value="belize">Belize</div>
+                  <div className="district" onClick={(e) => getVillages(e)} data-value="orangewalk">Orange Walk</div>
+                  <div className="district" onClick={(e) => getVillages(e)} data-value="cayo">Cayo</div>
+                  <div className="district" onClick={(e) => getVillages(e)} data-value="stanncreek">Stann Creek</div>
+                  <div className="district" onClick={(e) => getVillages(e)} data-value="toledo">Toledo</div>
                 </div>
                 <div className="affected-areas">
                     <div className="district-area">San Ignacio <span className="virus" role="img" aria-label="virus">🦠</span></div>
