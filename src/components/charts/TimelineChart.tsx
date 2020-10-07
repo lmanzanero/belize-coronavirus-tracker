@@ -16,7 +16,7 @@ const TimelineChart = () =>  {
           labels: isLoading ? [] : months,
           datasets: [{
               label: 'Cases',
-              data: [0, 0, 3, 18, 18, 24, 48, 1007, 1825],
+              data: [0, 0, 3, 18, 18, 24, 48, 1007, 1825, 2243],
               backgroundColor: [
                   'rgba(54, 162, 235, 0.5)',
                   'rgba(255, 99, 132, 0.7)',
@@ -26,7 +26,8 @@ const TimelineChart = () =>  {
                   'rgba(153, 102, 255, 0.7)',
                   'rgba(255, 159, 64, 0.7)',
                   'rgba(255, 159, 64, 0.7)',
-                  'rgba(255, 100, 64, 0.7)'
+                  'rgba(255, 100, 64, 0.7)',
+                  'rgba(255, 99, 132, 0.3)',
               ],
               borderColor: [
                   'rgba(54, 162, 235, 0.9)',
