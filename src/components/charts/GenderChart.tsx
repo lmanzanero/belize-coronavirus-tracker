@@ -9,7 +9,7 @@ export const GenderChart = () => {
     if(!data) return 
     
      const { confirmale, confirmfemale } = data.data.features[0].attributes; 
-      var ctx = document.getElementById('casesByGenderChart');
+      var ctx = document.getElementById('casesByGenderChart') as HTMLCanvasElement;
       var casesByGenderPieChart = new Chart(ctx, {
         type: 'pie',
         data: {

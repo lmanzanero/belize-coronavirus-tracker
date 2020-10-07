@@ -32,7 +32,7 @@ export default function BelizeMap ()  {
 
       var popup = L.popup();
 
-      function onMapClick(e) {
+      function onMapClick(e:any) {
         popup
           .setLatLng(e.latlng)
           .setContent("You clicked the map at " + e.latlng.toString())

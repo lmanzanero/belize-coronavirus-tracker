@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import logo from './icons/belize-flag.png'; 
 import positive from './icons/positive.png';
 import recovered from './icons/recovered.png';
@@ -18,6 +18,7 @@ import { useQuery } from 'react-query';
 import { getApiData } from './repository/api';
 import DeathsTimelineChart from './components/charts/DeathsTimelineChart';
 import LiveTimelineChart from './components/charts/LiveTimelineChart';
+import moment from 'moment'
 
 const affectedVillagesData = [
   {
@@ -89,14 +90,20 @@ const affectedVillagesData = [
 ];
 
 export const App = () => { 
-  const { data, isLoading } = useQuery('latestdata', getApiData);    
+  const { data, isLoading } = useQuery('latestdata', getApiData);  
+  const [date, setDate ] = useState('')  
 
   useEffect(() => { 
     ReactGA.initialize('UA-175547717-1');
     ReactGA.pageview(window.location.pathname + window.location.search); 
+    if(data){
+      let date = Number(data.data[0].lastUpdate);
+      let formmatedDate = new Date(date);
+      setDate(formmatedDate.toDateString()); 
+   }
   }, [isLoading])
 
-  const getVillages = (e) => {  
+  const getVillages = (e:any) => {  
     const districtData = affectedVillagesData.filter(district => district.name === e.target.getAttribute('data-value'));
   }
 
@@ -105,7 +112,7 @@ export const App = () => {
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h1><span className="virus" role="img" aria-label="virus">🦠</span> Belize Coronavirus (covid-19) cases and live updates <span className="virus" role="img" aria-label="virus">🦠</span></h1>
-          <h4>🇧🇿 Total Cases: {isLoading ? 'loading...' : data.data[0].confirmed} 🇧🇿 <br/><br/> <span>Last Updated: { isLoading ? 'loading...' : Date(Number(data.data[0].lastUpdate))}</span></h4>
+    <h4>🇧🇿 Total Cases: {isLoading ? 'loading...' : data?.data[0].confirmed} 🇧🇿 <br/><br/> <span>Last Updated: { isLoading ? 'loading...' :  date}</span></h4>
           <div className="screening-data">
             <div className="btn">
                <p className="title">Test Done</p>
@@ -125,22 +132,22 @@ export const App = () => {
             <div className="btn">
               <p className="title">Confirmed</p>
                <img src={positive} alt="Belize Coronavirus confirmed"/>
-              <p className="text"> {isLoading ? 'loading...' : data.data[0].confirmed} </p>
+              <p className="text"> {isLoading ? 'loading...' : data?.data[0].confirmed} </p>
             </div>
             <div className="btn">
               <p className="title">Deseased</p>
                <img src={death} alt="Belize Coronavirus deseased"/>
-               <p className="text"> {isLoading ? 'loading...' : data.data[0].deaths}</p>
+               <p className="text"> {isLoading ? 'loading...' : data?.data[0].deaths}</p>
             </div>
             <div className="btn">
               <p className="title">Recovered</p>
                <img src={recovered} alt="Belize Coronavirus recovered"/>
-              <p className="text"> {isLoading ? 'loading...' : data.data[0].recovered}</p>
+              <p className="text"> {isLoading ? 'loading...' : data?.data[0].recovered}</p>
             </div>
             <div className="btn">
               <p className="title">Active</p>
                <img src={active} alt="Belize Coronavirus Active cases"/>
-               <p className="text"> {isLoading ? 'loading...' : data.data[0].active}</p>
+               <p className="text"> {isLoading ? 'loading...' : data?.data[0].active}</p>
             </div>
           </div>
         </div>

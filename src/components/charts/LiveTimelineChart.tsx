@@ -13,7 +13,7 @@ export default function LiveTimelineChart() {
 
 	
   useEffect(() => { 
-    let cfg = {
+    let cfg: any = {
 			data: {
 				datasets: [{
 					label: ' ✅ Confirmed',
@@ -92,7 +92,7 @@ export default function LiveTimelineChart() {
 							maxRotation: 0,
 							sampleSize: 100
 						},
-						afterBuildTicks: function(scale, ticks) { 
+						afterBuildTicks: function(scale:any, ticks:any) { 
 							let majorUnit = scale._majorUnit;
 							let firstTick = ticks[0];
 							let i, ilen, val, tick, currMajor, lastMajor;
@@ -133,7 +133,7 @@ export default function LiveTimelineChart() {
 					intersect: false,
 					mode: 'index',
 					callbacks: {
-						label: function(tooltipItem, myData) {
+						label: function(tooltipItem:any, myData:any) {
 							var label = myData.datasets[tooltipItem.datasetIndex].label || '';
 							if (label) {
 								label += ': ';
@@ -147,13 +147,13 @@ export default function LiveTimelineChart() {
 		}
 
 	if(!isLoading && !recoveredLoading && !deathsLoading && !activeLoading){ 
-		let ctx = document.getElementById('liveCasesByTimelineCart');
+		let ctx = document.getElementById('liveCasesByTimelineCart') as HTMLCanvasElement;
 		let liveCasesByTimelineCart = new Chart(ctx, cfg);
 	}
 
-	function cleanUpActiveData(dataSrc) {  
+	function cleanUpActiveData(dataSrc: any) {  
 		if(activeData){
-			const data = activeData.data.map(cases => {
+			const data = activeData.data.map((cases:any) => {
 				const chartData = {
 					t: new Date(cases.Date).getTime(),
 					y: `${cases.Active}`
@@ -164,9 +164,9 @@ export default function LiveTimelineChart() {
 		}
 	}
       
-	 function cleanUpData(dataSrc) {
+	 function cleanUpData(dataSrc:any) {
 		  if(dataSrc){ 
-			  const dataArr = dataSrc.data.map(cases => { 
+			  const dataArr = dataSrc.data.map((cases:any) => { 
 				const chartData = {
 						t: new Date(cases.Date).getTime(),
 						y: `${cases.Cases}`
@@ -193,7 +193,7 @@ export default function LiveTimelineChart() {
 						<option value="second">Second</option>
 						<option value="minute">Minute</option>
 						<option value="hour">Hour</option>
-						<option value="day" checked>Day</option>
+						<option value="day">Day</option>
 						<option value="month">Month</option>
 						<option value="year">Year</option>
 					</select>

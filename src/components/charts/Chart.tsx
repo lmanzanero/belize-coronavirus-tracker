@@ -9,7 +9,7 @@ const CasesByDistrictChart = () => {
     if(isLoading) {    
       // console.log("loading...")
     }  else { 
-      const loadedData = data.data.features.map(district => { 
+      const loadedData = data?.data.features.map((district:any) => { 
         let casesByDistrict = {
           name: district.attributes.district,
           value: district.attributes.value
@@ -17,9 +17,9 @@ const CasesByDistrictChart = () => {
         return casesByDistrict;
        });;   
 
-      const districts = loadedData.map(district => district.name);
-      const districtCases = loadedData.map(district => district.value); 
-    var ctx = document.getElementById('casesByDistrict');  
+      const districts = loadedData.map((district:any) => district.name);
+      const districtCases = loadedData.map((district:any) => district.value); 
+    var ctx = document.getElementById('casesByDistrict') as HTMLCanvasElement;  
     var casesByGenderPieChart = new Chart(ctx, {
       type: 'bar',
       data: {
