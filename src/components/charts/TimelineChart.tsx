@@ -16,7 +16,7 @@ const TimelineChart = () =>  {
           labels: isLoading ? [] : months,
           datasets: [{
               label: 'Cases',
-              data: [0, 0, 3, 18, 18, 24, 48, 1007, 1825, 2243],
+              data: isLoading ? [0, 0, 3, 18, 18, 24, 48, 1007, 1825, 2243] : getDataByMonth(),
               backgroundColor: [
                   'rgba(54, 162, 235, 0.5)',
                   'rgba(255, 99, 132, 0.7)',
@@ -65,36 +65,39 @@ const TimelineChart = () =>  {
   });
 }, [isLoading]) 
 
-    const getDateFromData = async () => {
-        const dataSet = isLoading ? [] : data?.data.map((dayCases:any) => {  
-          let date = new Date(dayCases.Date);   
-          const formattedData = {
-            date: date.getMonth(),
-            cases: dayCases.Cases
-          } 
-          return formattedData;
-        });
-        return dataSet;
-    }
+const getDateFromData = () => {
+  const dataSet = isLoading ? [] : data?.data.map((dayCases:any) => {  
+    let date = new Date(dayCases.Date);   
+    const formattedData = {
+      date: date.getMonth(),
+      cases: dayCases.Cases
+    } 
+    return formattedData;
+  });
+  return dataSet;
+}
 
-    const getDataByMonth = async () => {
-          const dataSet = await getDateFromData(); 
-          if(dataSet.length != 0) { 
-            const monthData = months.map((monthName, i) => {  
-                const monthCases = dataSet.filter((date:any) => date.date === i); 
-                const filteredMonth = {
-                  [monthName]: monthCases.length === 0 ? 0 : Math.max.apply(Math, monthCases.map((month:any)=> month.cases))
-                }
-                return filteredMonth;
-            });
-
-            return monthData;
+const getDataByMonth = () => {
+    let dataArray:any = []
+    const dataSet = getDateFromData(); 
+    if(dataSet.length != 0) { 
+      const monthData = months.map((monthName, i) => {  
+          const monthCases = dataSet.filter((date:any) => date.date === i); 
+          const filteredMonth = {
+            [monthName]: monthCases.length === 0 ? 0 : Math.max.apply(Math, monthCases.map((month:any)=> month.cases))
           }
-    }
+          return filteredMonth;
+      });
 
-    getDataByMonth().then(data => { 
-        // console.log(data);
-    });
+      monthData.map(month =>  {
+        const cases = Object.values(month) 
+        dataArray.push(...cases);
+        });
+        console.log(dataArray)
+      return dataArray;
+    }    
+}
+
 
     return (
       <div className={`chart ${isLoading ? 'loading' : ''}`}>  
