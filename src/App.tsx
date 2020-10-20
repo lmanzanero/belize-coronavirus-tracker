@@ -117,17 +117,17 @@ export const App = () => {
             <div className="btn">
                <p className="title">Test Done</p>
                  <img src={swab} alt="Belize Coronavirus updates"/>
-               <p className="text">5,855</p>
+               <p className="text">19,351</p>
             </div>
             <div className="btn">
               <p className="title">Under Investigation</p>
                <img src={search} alt="Belize Coronavirus under investigation"/>
-              <p className="text">412</p>
+              <p className="text">531</p>
             </div>
             <div className="btn">
               <p className="title">Negative</p>
                <img src={negative} alt="Belize negative cases"/>
-              <p className="text">5,186</p>
+              <p className="text">14799</p>
             </div>
             <div className="btn">
               <p className="title">Confirmed</p>
@@ -164,7 +164,7 @@ export const App = () => {
         </div>
         <div className="map-container"> 
             <div className="map-container-inner">
-              <div>
+              <div  className="map-data-col">
                 <h1 className="paper-title">View Cases on Map</h1>
                 <div className="districts-row">
                   <div className="district" onClick={(e) => getVillages(e)} data-value="corozal">Corozal</div>

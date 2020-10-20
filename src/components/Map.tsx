@@ -3,6 +3,7 @@ import React, { useEffect } from 'react'
 // import { getApiData } from '../repository/api'
 import L from 'leaflet'
 import virus from '../icons/virus.png';
+import {cayoDistrict}  from '../geoJson/cayo'
 
 export default function BelizeMap ()  {
     // const { data, isLoading, error } = useQuery('mapdata', getApiData);
@@ -25,9 +26,53 @@ export default function BelizeMap ()  {
         popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
     });
     
+    let featureCollection: GeoJSON.FeatureCollection<any> = {
+      type: 'FeatureCollection',
+      features: [
+        {
+          type: 'Feature',
+          geometry: {
+            type: 'LineString',
+            coordinates: [...cayoDistrict]
+          },
+          properties: {}
+        }
+      ]
+    };
 
-      L.marker([17.1899, -88.4976], {icon: virusIcon}).addTo(mymap)
-        .bindPopup("<b>Coronavirus Case: 🦠</b>").openPopup();
+    let popUpLayout = `
+      <div>
+        <h1>San Pedro</h1>
+        <b>confirmed ✅: 324 </b>
+        <b>active 🦠: 39 </b>
+        <b>deaths ☠️: 1</b>
+      </div>
+    `;
+     
+
+      L.marker([17.920596087711704, -87.96117782592773], {icon: virusIcon}).addTo(mymap)
+        .bindPopup(popUpLayout).openPopup();
+
+      L.marker([18.391669187688766, -88.39324951171875], {icon: virusIcon}).addTo(mymap)
+      .bindPopup("<b>Coronavirus Case: 🦠</b>").openPopup();
+
+      L.marker([17.25066245705116, -88.77090454101562], {icon: virusIcon}).addTo(mymap)
+      .bindPopup("<b>Coronavirus Case: 🦠</b>").openPopup();
+
+      L.marker([17.499354014646553, -88.19686889648438], {icon: virusIcon}).addTo(mymap)
+      .bindPopup("<b>Coronavirus Case: 🦠</b>").openPopup();
+
+      L.marker([16.96486000097799, -88.22296142578125], {icon: virusIcon}).addTo(mymap)
+      .bindPopup("<b>Coronavirus Case: 🦠</b>").openPopup();
+
+      L.marker([16.097278567218588, -88.81622314453125], {icon: virusIcon}).addTo(mymap)
+      .bindPopup("<b>Coronavirus Case: 🦠</b>").openPopup();
+
+      L.marker([18.081895438726583, -88.56353759765625], {icon: virusIcon}).addTo(mymap)
+      .bindPopup("<b>Coronavirus Case: 🦠</b>").openPopup();
+
+      L.geoJSON(featureCollection).addTo(mymap);
+      
 
 
       var popup = L.popup();

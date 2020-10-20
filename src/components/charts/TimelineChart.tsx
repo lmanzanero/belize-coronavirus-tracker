@@ -80,7 +80,7 @@ const getDateFromData = () => {
 const getDataByMonth = () => {
     let dataArray:any = []
     const dataSet = getDateFromData(); 
-    if(dataSet.length != 0) { 
+    if(dataSet.length !== 0) { 
       const monthData = months.map((monthName, i) => {  
           const monthCases = dataSet.filter((date:any) => date.date === i); 
           const filteredMonth = {
