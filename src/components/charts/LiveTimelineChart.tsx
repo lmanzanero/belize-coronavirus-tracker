@@ -138,7 +138,7 @@ export default function LiveTimelineChart() {
 							if (label) {
 								label += ': ';
 							}
-							label += parseFloat(tooltipItem.value).toFixed(2);
+							label += parseFloat(tooltipItem.value).toFixed(0);
 							return label;
 						}
 					}
