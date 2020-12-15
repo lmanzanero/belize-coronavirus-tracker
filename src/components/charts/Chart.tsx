@@ -4,14 +4,15 @@ import { getCasesByDistrict } from '../../repository/api';
 import Chart from 'chart.js'; 
 
 const CasesByDistrictChart = () => {
-  const { data, isLoading } = useQuery('casesbydistrict', getCasesByDistrict);  
+  const { data, isLoading } = useQuery('casesbydistrict', getCasesByDistrict);
+  console.log("from cases by district:",data);  
   useEffect(() => { 
     if(isLoading) {    
       // console.log("loading...")
     }  else { 
       const loadedData = data?.data.features.map((district:any) => { 
         let casesByDistrict = {
-          name: district.attributes.district,
+          name: district.attributes.Area,
           value: district.attributes.value
         } 
         return casesByDistrict;
@@ -33,7 +34,9 @@ const CasesByDistrictChart = () => {
                   'rgba(255, 206, 86, 0.7)',
                   'rgba(75, 192, 192, 0.7)',
                   'rgba(153, 102, 255, 0.7)',
-                  'rgba(255, 159, 64, 0.7)'
+                  'rgba(255, 159, 64, 0.7)',
+                  'rgba(255, 99, 132, 0.2)',
+                  'rgba(54, 162, 235, 0.1)',
               ],
               borderColor: [
                   'rgba(255, 99, 132, )',
@@ -73,7 +76,7 @@ const CasesByDistrictChart = () => {
 
   return (
      
-    <div className={`chart ${isLoading ? 'loading' : ''}`}>  
+    <div className={`chart ${isLoading && !data ? 'loading' : ''}`}>  
       <div className="chart-inner">   
       <canvas id="casesByDistrict"></canvas>
       </div>    
