@@ -1,12 +1,25 @@
-import React, { useEffect } from 'react'; 
+import React, { useEffect } from 'react';
 import { useQuery } from 'react-query';
-import {  getDeathsByTimeLine, getDeathCasesSinceDayOne } from '../../repository/api';
+import { getDeathsByTimeLine, getDeathCasesSinceDayOne } from '../../repository/api';
 import Chart from 'chart.js';
 
-const DeathsTimelineChart = () =>  {
+const DeathsTimelineChart = () => {
   const { data, isLoading } = useQuery('deathtimelinecases', getDeathCasesSinceDayOne);
-  const months = ['January','February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
- 
+  const months = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December',
+  ];
+
   useEffect(() => {
     var ctx = document.getElementById('deathCasesByTimelineCart') as HTMLCanvasElement;
     var casesByTimelineCart = new Chart(ctx, {
@@ -43,71 +56,77 @@ const DeathsTimelineChart = () =>  {
               borderWidth: 1,
           }]
       },
-      options: { 
-          maintainAspectRatio: false, 
-          legend: {
-              position: 'bottom',
-              display: false
-          }, 
-          layout: {
-              padding: {
-                  bottom: 0,
-                  left: 10,
-                  right: 10,
-                  top: 0
-              }
+      options: {
+        maintainAspectRatio: false,
+        legend: {
+          position: 'bottom',
+          display: false,
+        },
+        layout: {
+          padding: {
+            bottom: 0,
+            left: 10,
+            right: 10,
+            top: 0,
           },
-          title: {
-              display: true,
-              text: 'Total Deaths by Month',
-              fontSize: 30
-            }
-      }
-  });
+        },
+        title: {
+          display: true,
+          text: 'Total Deaths by Month',
+          fontSize: 30,
+        },
+      },
+    });
+  }, [isLoading, months]);
 
-}, [isLoading]) 
-
-    const getDateFromData = () => {
-        const dataSet = isLoading ? [] : data?.data.map((dayCases:any) => {  
-          let date = new Date(dayCases.Date);   
+  const getDateFromData = () => {
+    const dataSet = isLoading
+      ? []
+      : data?.data.map((dayCases: any) => {
+          let date = new Date(dayCases.Date);
           const formattedData = {
             date: date.getMonth(),
-            cases: dayCases.Cases
-          } 
+            cases: dayCases.Cases,
+          };
           return formattedData;
         });
-        return dataSet;
+    return dataSet;
+  };
+
+  const getDataByMonth = () => {
+    let dataArray: any = [];
+    const dataSet = getDateFromData();
+    if (dataSet.length != 0) {
+      const monthData = months.map((monthName, i) => {
+        const monthCases = dataSet.filter((date: any) => date.date === i);
+        const filteredMonth = {
+          [monthName]:
+            monthCases.length === 0
+              ? 0
+              : Math.max.apply(
+                  Math,
+                  monthCases.map((month: any) => month.cases),
+                ),
+        };
+        return filteredMonth;
+      });
+
+      monthData.map((month) => {
+        const cases = Object.values(month);
+        dataArray.push(...cases);
+      });
+      console.log(dataArray);
+      return dataArray;
     }
+  };
 
-    const getDataByMonth = () => {
-          let dataArray:any = []
-          const dataSet = getDateFromData(); 
-          if(dataSet.length != 0) { 
-            const monthData = months.map((monthName, i) => {  
-                const monthCases = dataSet.filter((date:any) => date.date === i); 
-                const filteredMonth = {
-                  [monthName]: monthCases.length === 0 ? 0 : Math.max.apply(Math, monthCases.map((month:any)=> month.cases))
-                }
-                return filteredMonth;
-            });
-
-            monthData.map(month =>  {
-              const cases = Object.values(month) 
-              dataArray.push(...cases);
-              });
-              console.log(dataArray)
-            return dataArray;
-          }    
-    }
- 
-
-    return (
-      <div className={`chart ${isLoading ? 'loading' : ''}`}>  
-          <div className="chart-inner"> 
-            <canvas id="deathCasesByTimelineCart" style={{margin: 0, padding:0}}></canvas> 
-          </div>
-      </div>  
-    ); 
-}
+  return (
+    <div className={`chart ${isLoading ? 'loading' : ''}`}>
+      <div className="chart-inner">
+        <canvas id="deathCasesByTimelineCart" style={{ margin: 0, padding: 0 }}></canvas>
+      </div>
+    </div>
+  );
+};
 
 export default DeathsTimelineChart;

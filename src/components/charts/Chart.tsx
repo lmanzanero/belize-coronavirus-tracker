@@ -84,4 +84,4 @@ const CasesByDistrictChart = () => {
   ); 
 }
 
-export default CasesByDistrictChart;
+export default CasesByDistrictChart; 

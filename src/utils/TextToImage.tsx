@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import TextToImageInterface from '../interfaces/TextToImageInterface'
+import TextToImageInterface from '../interfaces/TextToImageInterface';
 
 const TextToImage = (props: TextToImageInterface) => {
   useEffect(() => {
@@ -7,13 +7,8 @@ const TextToImage = (props: TextToImageInterface) => {
     canvas.width = 940;
     canvas.height = 788;
     let ctx = canvas.getContext('2d');
-    
-  }, [])
-  return (
-    <div id="cover-photo">
+  }, []);
+  return <div id="cover-photo"></div>;
+};
 
-    </div>
-  );
-}
-
-export { TextToImage }
+export { TextToImage };
