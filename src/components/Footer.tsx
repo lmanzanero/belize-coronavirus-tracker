@@ -20,7 +20,7 @@ export const Footer = () => {
         <p>
           <i>All Contributors</i> <span>({isLoading ? 'loading...' : data?.data.length})</span>
         </p>
-        {isLoading
+        {isLoading && data
           ? 'loading...'
           : data?.data.map((contributor: any) => (
               <a href={contributor.html_url} key={contributor.id} target="_blank" rel="noopener noreferrer">
