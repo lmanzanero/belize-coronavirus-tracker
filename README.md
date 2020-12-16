@@ -2,20 +2,18 @@
 
 #see live updates [here](https://lmanzanero.github.io/belize-coronavirus-tracker/)
 
+## Reliable Source for data
+[ESRI](https://belize-coronavirus-response-tbsl-drp.hub.arcgis.com/)
+
+[covid19api.com](https://api.covid19api.com/)
+
+[Belize Ministry of Health](https://www.facebook.com/Belizehealth/)
+
 ## Quick Start
 
-```bash
 # Install dependencies for client
-npm install
+ npm install
 
 # Start Project
-npm start
-
-
-## App Info
-
-#[ESRI](https://belize-coronavirus-response-tbsl-drp.hub.arcgis.com//)
-
-#[covid19api.com](https://api.covid19api.com//)
-
-#[Belize Ministry of Health](https://www.facebook.com/Belizehealth/)
+ npm start
+ 
