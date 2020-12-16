@@ -9,6 +9,7 @@
 
 [Belize Ministry of Health](https://www.facebook.com/Belizehealth/)
 
+```bash
 ## Quick Start
 
 # Install dependencies for client
