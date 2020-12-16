@@ -9,9 +9,9 @@
 
 [Belize Ministry of Health](https://www.facebook.com/Belizehealth/)
 
-```bash
-## Quick Start
 
+## Quick Start
+```bash
 # Install dependencies for client
  npm install
 
