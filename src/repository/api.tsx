@@ -43,6 +43,10 @@ const getGithubContributors = () => {
   return axios.get('https://api.github.com/repos/lmanzanero/belize-coronavirus-tracker/contributors');
 };
 
+const getCommunityCases = () => {
+  return axios.get('https://services6.arcgis.com/8TOGEuvqHhwQHCke/arcgis/rest/services/CommunityCases/FeatureServer/0/query?f=json&where=((LastUpdate%20%3D%20%27Yes%27)%20AND%20(DailyCases%20IS%20NOT%20NULL))%20AND%20(LastUpdate%3D%27Yes%27)&returnGeometry=false&spatialRel=esriSpatialRelIntersects&outFields=*&orderByFields=DISTRICT%20asc%2CSETTNAME%20asc&outSR=102100&resultOffset=0&resultRecordCount=100&resultType=standard&cacheHint=true');
+}
+
 export {
   getCasesByDistrict,
   getCasesByGender,
@@ -54,4 +58,5 @@ export {
   getRecoveredCasesSinceDayOne,
   getConfirmedCasesSinceDayOne,
   getGithubContributors,
+  getCommunityCases
 };

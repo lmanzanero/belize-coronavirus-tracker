@@ -1,15 +1,36 @@
-import React, { useEffect } from 'react';
-// import { useQuery } from 'react-query'
-// import { getApiData } from '../repository/api'
+import React, { useEffect, useState } from 'react';
+import { useQuery } from 'react-query'
+import { getCommunityCases} from '../repository/api'
 import L from 'leaflet';
 import virus from '../icons/virus.png';
 import { cayoDistrict } from '../geoJson/cayo';
+import { sortData } from '../utils/utils';
 
 export default function BelizeMap() {
-  // const { data, isLoading, error } = useQuery('mapdata', getApiData);
+  const { data, isLoading, error } = useQuery('communitycases', getCommunityCases);
+  const [ mapData, setMapData ] = useState({});
+  const formattedCommunityData = data?.data.features.map((attributes: any) => {
+     const data = {
+      "name":  attributes?.attributes.DISTRICT,
+      "x": attributes?.attributes.x,
+      "y": attributes?.attributes.y,
+      "village": attributes?.attributes.SETTNAME
+     }
+     return data;
+  });
+
+if(formattedCommunityData){
+  const formattedApiData = sortData(formattedCommunityData, 'name');
+ console.log(formattedApiData);
+}
+
+  
+
+ 
+ 
   useEffect(() => {
     var mymap = L.map('mapid').setView([17.1899, -88.4976], 8);
-
+    console.log(mapData);
     L.tileLayer(
       'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw',
       {

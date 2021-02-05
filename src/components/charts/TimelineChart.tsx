@@ -56,7 +56,7 @@ const TimelineChart = () => {
         const cases = Object.values(month);
         dataArray.push(...cases);
       });
-      console.log(dataArray);
+      // console.log(dataArray);
       return dataArray;
     }
   }, [getDateFromData, months]);
