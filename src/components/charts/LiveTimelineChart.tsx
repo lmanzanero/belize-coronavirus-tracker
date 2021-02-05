@@ -195,7 +195,7 @@ export default function LiveTimelineChart() {
     <div className={`chart ${isLoading || recoveredLoading || deathsLoading ? 'loading' : ''}`}>
       <div className="chart-inner">
         <canvas id="liveCasesByTimelineCart" style={{ margin: '0', padding: 0 }}></canvas>
-        <div>
+        {/* <div>
           <select id="type">
             <option value="line">Line</option>
             <option value="bar">Bar</option>
@@ -208,7 +208,7 @@ export default function LiveTimelineChart() {
             <option value="month">Month</option>
             <option value="year">Year</option>
           </select>
-        </div>
+        </div> */}
       </div>
     </div>
   );
