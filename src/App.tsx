@@ -130,17 +130,17 @@ export const App = () => {
           <div className="btn">
             <p className="title">Test Done</p>
             <img src={swab} alt="Belize Coronavirus updates" />
-            <p className="text">19,351</p>
+            <p className="text">unavailable</p>
           </div>
           <div className="btn">
             <p className="title">Under Investigation</p>
             <img src={search} alt="Belize Coronavirus under investigation" />
-            <p className="text">531</p>
+            <p className="text">unavailable</p>
           </div>
           <div className="btn">
             <p className="title">Negative</p>
             <img src={negative} alt="Belize negative cases" />
-            <p className="text">14799</p>
+            <p className="text">unavailable</p>
           </div>
           <div className="btn">
             <p className="title">Confirmed</p>
