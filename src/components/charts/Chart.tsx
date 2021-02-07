@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useQuery } from 'react-query';
 import { getCasesByDistrict } from '../../repository/api';
 import Chart from 'chart.js'; 
-import { shortenDistrictName } from 'utils/utils';
+import { shortenName } from 'utils/utils';
 
 const CasesByDistrictChart = () => {
   const { data, isLoading } = useQuery('casesbydistrict', getCasesByDistrict);
@@ -19,7 +19,7 @@ const CasesByDistrictChart = () => {
         return casesByDistrict;
        });;   
 
-      const districts = loadedData.map((district:any) => shortenDistrictName(district.name, 10));
+      const districts = loadedData.map((district:any) => shortenName(district.name, 10));
       const districtCases = loadedData.map((district:any) => district.value); 
     var ctx = document.getElementById('casesByDistrict') as HTMLCanvasElement;  
     var casesByGenderPieChart = new Chart(ctx, {

@@ -8,29 +8,35 @@ import { sortData } from '../utils/utils';
 
 export default function BelizeMap() {
   const { data, isLoading, error } = useQuery('communitycases', getCommunityCases);
-  const [ mapData, setMapData ] = useState({});
-  const formattedCommunityData = data?.data.features.map((attributes: any) => {
-     const data = {
-      "name":  attributes?.attributes.DISTRICT,
-      "x": attributes?.attributes.x,
-      "y": attributes?.attributes.y,
-      "village": attributes?.attributes.SETTNAME
-     }
-     return data;
-  });
-
-if(formattedCommunityData){
-  const formattedApiData = sortData(formattedCommunityData, 'name');
- console.log(formattedApiData);
-}
-
-  
+  const [ mapData, setMapData ] = useState([]);
 
  
  
   useEffect(() => {
-    var mymap = L.map('mapid').setView([17.1899, -88.4976], 8);
-    console.log(mapData);
+    var mymap = L.map('mapid').setView([17.1899, -88.4976], 8); 
+
+
+  if(isLoading && data) {
+    const formattedCommunityData = data?.data.features.map((attributes: any) => {
+      const data = {
+       "name":  attributes?.attributes.DISTRICT,
+       "x": attributes?.attributes.x,
+       "y": attributes?.attributes.y,
+       "village": attributes?.attributes.SETTNAME
+      }
+      return data;
+   });
+    const formattedApiData: any = sortData(formattedCommunityData, 'name'); 
+    formattedApiData.Belize.forEach((village: any)=> {
+      console.log(village);
+      L.marker([village.x, village.y], { icon: virusIcon })
+      .addTo(mymap)
+      .bindPopup(`<b>${village.village}: cases 🦠</b>`)
+      .openPopup(); 
+    });
+  }
+
+  
     L.tileLayer(
       'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw',
       {
@@ -120,8 +126,20 @@ if(formattedCommunityData){
         .openOn(mymap);
     }
 
+ 
+
+    // function addMarkerToMap(data) {
+
+    //   L.marker([18.391669187688766, -88.39324951171875], { icon: virusIcon })
+    //   .addTo(mymap)
+    //   .bindPopup('<b>Coronavirus Case: 🦠</b>')
+    //   .openPopup();
+    // }
+
     mymap.on('click', onMapClick);
   }, []);
 
-  return <div id="mapid"></div>;
+  return <div> 
+     <div id="mapid"></div>;
+  </div>
 }

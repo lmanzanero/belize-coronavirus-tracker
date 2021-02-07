@@ -1,10 +1,10 @@
-export function shortenDistrictName(text,max) {
+export function shortenName(text,max) {
   return text && text.length > max ? text.slice(0,max).split(' ').slice(0, -1).join(' ') + '...' : text
 }
 
 export function sortData(data, columnName) { 
   var sortedData = {};
-
+  console.log(data);
   for (var i = 0; i < data.length; i++) {
       var object = data[i];
 

@@ -6,18 +6,18 @@ import Chart from 'chart.js';
 const DeathsTimelineChart = () => {
   const { data, isLoading } = useQuery('deathtimelinecases', getDeathCasesSinceDayOne);
   const months = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December',
+    'Jan..',
+    'Feb..',
+    'Mar..',
+    'Apr..',
+    'May..',
+    'Jun..',
+    'Jul..',
+    'Aug..',
+    'Sep..',
+    'Oct...',
+    'Nov...',
+    'Dec...',
   ];
 
   useEffect(() => {
