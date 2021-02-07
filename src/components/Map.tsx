@@ -57,19 +57,19 @@ export default function BelizeMap() {
       popupAnchor: [-3, -76], // point from which the popup should open relative to the iconAnchor
     });
 
-    let featureCollection: GeoJSON.FeatureCollection<any> = {
-      type: 'FeatureCollection',
-      features: [
-        {
-          type: 'Feature',
-          geometry: {
-            type: 'LineString',
-            coordinates: [...cayoDistrict],
-          },
-          properties: {},
-        },
-      ],
-    };
+    // let featureCollection: GeoJSON.FeatureCollection<any> = {
+    //   type: 'FeatureCollection',
+    //   features: [
+    //     {
+    //       type: 'Feature',
+    //       geometry: {
+    //         type: 'LineString',
+    //         coordinates: [...cayoDistrict],
+    //       },
+    //       properties: {},
+    //     },
+    //   ],
+    // };
 
     let sanPedroStats = `
       <div>
@@ -115,7 +115,7 @@ export default function BelizeMap() {
       .bindPopup('<b>Coronavirus Case: 🦠</b>')
       .openPopup();
 
-    L.geoJSON(featureCollection).addTo(mymap);
+    // L.geoJSON(featureCollection).addTo(mymap);
 
     var popup = L.popup();
 
