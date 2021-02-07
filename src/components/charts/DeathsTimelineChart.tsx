@@ -25,7 +25,7 @@ const DeathsTimelineChart = () => {
     var casesByTimelineCart = new Chart(ctx, {
       type: 'bar',
       data: {
-          labels: isLoading ? [] : months,
+          labels: isLoading && data ? [] : months,
           datasets: [{
               label: 'Cases',
               data: getDataByMonth(),

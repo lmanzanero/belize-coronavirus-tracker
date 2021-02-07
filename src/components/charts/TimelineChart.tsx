@@ -37,7 +37,7 @@ const TimelineChart = () => {
   const getDataByMonth = React.useCallback(() => {
     let dataArray: any = [];
     const dataSet = getDateFromData();
-    if (!dataSet && dataSet.length ) {
+    if (dataSet.length !== 0 ) {
       const monthData = months.map((monthName, i) => {
         const monthCases = dataSet.filter((date: any) => date.date === i);
         const filteredMonth = {

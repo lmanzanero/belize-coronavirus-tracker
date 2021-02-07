@@ -6,11 +6,8 @@ import { shortenName } from 'utils/utils';
 
 const CasesByDistrictChart = () => {
   const { data, isLoading } = useQuery('casesbydistrict', getCasesByDistrict, {refetchOnWindowFocus: false});
-  // console.log("from cases by district:",data);  
-  useEffect(() => { 
-    if(isLoading) {    
-      // console.log("loading...")
-    }  else { 
+  useEffect(() => {   
+    if(data) {     
       const loadedData = data?.data.features.map((district:any) => { 
         let casesByDistrict = {
           name: district.attributes.Area,
@@ -19,13 +16,13 @@ const CasesByDistrictChart = () => {
         return casesByDistrict;
        });;   
 
-      const districts = loadedData.map((district:any) => shortenName(district.name, 10));
+      const districts = loadedData.map((district:any) => shortenName(district.name, 10)); 
       const districtCases = loadedData.map((district:any) => district.value); 
     var ctx = document.getElementById('casesByDistrict') as HTMLCanvasElement;  
     var casesByGenderPieChart = new Chart(ctx, {
       type: 'bar',
       data: {
-          labels: districts,
+          labels: isLoading ? [] : districts,
           datasets: [{
               label: 'Cases',
               data: districtCases,
@@ -71,7 +68,7 @@ const CasesByDistrictChart = () => {
       }
   });
 } 
-}, [isLoading]) 
+}, [isLoading, data]) 
 
 
 
