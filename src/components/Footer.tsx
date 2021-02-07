@@ -2,7 +2,7 @@ import React from 'react';
 import { useQuery } from 'react-query';
 import { getGithubContributors } from '../repository/api';
 export const Footer = () => {
-  const { data, isLoading } = useQuery('getgithubcontributors', getGithubContributors);
+  const { data, isLoading } = useQuery('getgithubcontributors', getGithubContributors, {refetchOnWindowFocus: false});
   return (
     <div className="footer">
       <p>

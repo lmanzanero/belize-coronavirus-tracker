@@ -7,7 +7,7 @@ import { cayoDistrict } from '../geoJson/cayo';
 import { sortData } from '../utils/utils';
 
 export default function BelizeMap() {
-  const { data, isLoading, error } = useQuery('communitycases', getCommunityCases);
+  const { data, isLoading, error } = useQuery('communitycases', getCommunityCases,{refetchOnWindowFocus: false});
   const [ mapData, setMapData ] = useState([]);
 
  

@@ -90,7 +90,7 @@ const affectedVillagesData = [
 ];
 
 export const App = () => {
-  const { data, isLoading } = useQuery('latestdata', getApiData);
+  const { data, isLoading } = useQuery('latestdata', getApiData, {refetchOnWindowFocus: false});
   const [date, setDate] = useState('');
 
   useEffect(() => {
@@ -126,6 +126,10 @@ export const App = () => {
           🇧🇿 Total Cases: {isLoading ? 'loading...' : data?.data[0].confirmed} 🇧🇿 <br />
           <br /> <span>Last Updated: {isLoading ? 'loading...' : date}</span>
         </h4>
+        <div className="date-picker">
+          <label>Covid on this day: </label>
+          <input type="date" id="search" name="search"/>  
+        </div>
         <div className="screening-data">
           <div className="btn">
             <p className="title">Test Done</p>

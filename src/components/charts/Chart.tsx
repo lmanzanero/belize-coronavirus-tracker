@@ -5,7 +5,7 @@ import Chart from 'chart.js';
 import { shortenName } from 'utils/utils';
 
 const CasesByDistrictChart = () => {
-  const { data, isLoading } = useQuery('casesbydistrict', getCasesByDistrict);
+  const { data, isLoading } = useQuery('casesbydistrict', getCasesByDistrict, {refetchOnWindowFocus: false});
   // console.log("from cases by district:",data);  
   useEffect(() => { 
     if(isLoading) {    

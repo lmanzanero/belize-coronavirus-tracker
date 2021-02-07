@@ -4,7 +4,7 @@ import { getCasesByTimeline } from '../../repository/api';
 import Chart from 'chart.js';
 
 const TimelineChart = () => {
-  const { data, isLoading, error } = useQuery('timelinecases', getCasesByTimeline);
+  const { data, isLoading, error } = useQuery('timelinecases', getCasesByTimeline, {refetchOnWindowFocus: false});
   const months = [
     'Jan..',
     'Feb..',

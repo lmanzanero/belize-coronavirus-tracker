@@ -4,7 +4,7 @@ import { getCasesByGender } from '../../repository/api';
 import Chart from 'chart.js';
 
 export const GenderChart = () => {
-  const { data, isLoading } = useQuery('getcasesbygender', getCasesByGender);
+  const { data, isLoading } = useQuery('getcasesbygender', getCasesByGender, {refetchOnWindowFocus: false});
   useEffect(() => {
     if (!data) return;
 

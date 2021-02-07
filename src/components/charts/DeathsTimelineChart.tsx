@@ -4,7 +4,7 @@ import { getDeathsByTimeLine, getDeathCasesSinceDayOne } from '../../repository/
 import Chart from 'chart.js';
 
 const DeathsTimelineChart = () => {
-  const { data, isLoading } = useQuery('deathtimelinecases', getDeathCasesSinceDayOne);
+  const { data, isLoading } = useQuery('deathtimelinecases', getDeathCasesSinceDayOne, {refetchOnWindowFocus: false});
   const months = [
     'Jan..',
     'Feb..',

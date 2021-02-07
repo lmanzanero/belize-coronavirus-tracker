@@ -15,8 +15,8 @@ export default function LiveTimelineChart() {
     'livetimelinerecoveredcases',
     getRecoveredCasesSinceDayOne,
   );
-  const { data: deathsData, isLoading: deathsLoading } = useQuery('livetimelinedeathscases', getDeathCasesSinceDayOne);
-  const { data: activeData, isLoading: activeLoading } = useQuery('activecases', getTotalAllStatusCases);
+  const { data: deathsData, isLoading: deathsLoading } = useQuery('livetimelinedeathscases', getDeathCasesSinceDayOne, {refetchOnWindowFocus: false});
+  const { data: activeData, isLoading: activeLoading } = useQuery('activecases', getTotalAllStatusCases, {refetchOnWindowFocus: false});
 
   useEffect(() => {
     let cfg: any = {
