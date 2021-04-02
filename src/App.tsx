@@ -18,7 +18,7 @@ import { useQuery } from 'react-query';
 import { getApiData } from './repository/api';
 import DeathsTimelineChart from './components/charts/DeathsTimelineChart';
 import LiveTimelineChart from './components/charts/LiveTimelineChart';
-import moment from 'moment';
+import moment from 'moment'; 
 
 const affectedVillagesData = [
   {
@@ -93,6 +93,7 @@ export const App = () => {
   const { data, isLoading } = useQuery('latestdata', getApiData, {refetchOnWindowFocus: false});
   const [date, setDate] = useState('');
 
+  
   useEffect(() => {
     ReactGA.initialize('UA-175547717-1');
     ReactGA.pageview(window.location.pathname + window.location.search);
@@ -107,7 +108,7 @@ export const App = () => {
     const districtData = affectedVillagesData.filter(
       (district) => district.name === e.target.getAttribute('data-value'),
     );
-  };
+  }; 
 
   return (
     <div className="App">
