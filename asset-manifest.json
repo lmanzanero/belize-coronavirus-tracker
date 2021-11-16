@@ -1,31 +1,28 @@
 {
   "files": {
-    "main.css": "/belize-coronavirus-tracker/static/css/main.35975a82.chunk.css",
-    "main.js": "/belize-coronavirus-tracker/static/js/main.c978b6e8.chunk.js",
-    "main.js.map": "/belize-coronavirus-tracker/static/js/main.c978b6e8.chunk.js.map",
-    "runtime-main.js": "/belize-coronavirus-tracker/static/js/runtime-main.ba573399.js",
-    "runtime-main.js.map": "/belize-coronavirus-tracker/static/js/runtime-main.ba573399.js.map",
-    "static/js/2.c02ed628.chunk.js": "/belize-coronavirus-tracker/static/js/2.c02ed628.chunk.js",
-    "static/js/2.c02ed628.chunk.js.map": "/belize-coronavirus-tracker/static/js/2.c02ed628.chunk.js.map",
+    "main.css": "/belize-coronavirus-tracker/static/css/main.d7fee740.chunk.css",
+    "main.js": "/belize-coronavirus-tracker/static/js/main.a4e80024.chunk.js",
+    "main.js.map": "/belize-coronavirus-tracker/static/js/main.a4e80024.chunk.js.map",
+    "runtime-main.js": "/belize-coronavirus-tracker/static/js/runtime-main.23b65586.js",
+    "runtime-main.js.map": "/belize-coronavirus-tracker/static/js/runtime-main.23b65586.js.map",
+    "static/js/2.30ff0791.chunk.js": "/belize-coronavirus-tracker/static/js/2.30ff0791.chunk.js",
+    "static/js/2.30ff0791.chunk.js.map": "/belize-coronavirus-tracker/static/js/2.30ff0791.chunk.js.map",
     "index.html": "/belize-coronavirus-tracker/index.html",
-    "precache-manifest.06c8deff8fe0bb8d0961abbc3d2daeb1.js": "/belize-coronavirus-tracker/precache-manifest.06c8deff8fe0bb8d0961abbc3d2daeb1.js",
-    "service-worker.js": "/belize-coronavirus-tracker/service-worker.js",
-    "static/css/main.35975a82.chunk.css.map": "/belize-coronavirus-tracker/static/css/main.35975a82.chunk.css.map",
-    "static/js/2.c02ed628.chunk.js.LICENSE.txt": "/belize-coronavirus-tracker/static/js/2.c02ed628.chunk.js.LICENSE.txt",
-    "static/media/active.png": "/belize-coronavirus-tracker/static/media/active.14662814.png",
-    "static/media/belize-flag.png": "/belize-coronavirus-tracker/static/media/belize-flag.718e720a.png",
-    "static/media/death.png": "/belize-coronavirus-tracker/static/media/death.7f2974b3.png",
-    "static/media/negative.png": "/belize-coronavirus-tracker/static/media/negative.d3b06c15.png",
-    "static/media/positive.png": "/belize-coronavirus-tracker/static/media/positive.c236a5d9.png",
-    "static/media/recovered.png": "/belize-coronavirus-tracker/static/media/recovered.5dde9d14.png",
-    "static/media/search.png": "/belize-coronavirus-tracker/static/media/search.11438bda.png",
-    "static/media/swab.png": "/belize-coronavirus-tracker/static/media/swab.3accb93f.png",
-    "static/media/virus.png": "/belize-coronavirus-tracker/static/media/virus.13a9fbc1.png"
+    "static/css/main.d7fee740.chunk.css.map": "/belize-coronavirus-tracker/static/css/main.d7fee740.chunk.css.map",
+    "static/js/2.30ff0791.chunk.js.LICENSE.txt": "/belize-coronavirus-tracker/static/js/2.30ff0791.chunk.js.LICENSE.txt",
+    "static/media/active.911a9289.png": "/belize-coronavirus-tracker/static/media/active.911a9289.png",
+    "static/media/belize-flag.6cb5fd37.png": "/belize-coronavirus-tracker/static/media/belize-flag.6cb5fd37.png",
+    "static/media/death.2560f335.png": "/belize-coronavirus-tracker/static/media/death.2560f335.png",
+    "static/media/negative.b101fbe3.png": "/belize-coronavirus-tracker/static/media/negative.b101fbe3.png",
+    "static/media/positive.9aaf346e.png": "/belize-coronavirus-tracker/static/media/positive.9aaf346e.png",
+    "static/media/recovered.2750c68f.png": "/belize-coronavirus-tracker/static/media/recovered.2750c68f.png",
+    "static/media/search.c5623da6.png": "/belize-coronavirus-tracker/static/media/search.c5623da6.png",
+    "static/media/swab.75ada768.png": "/belize-coronavirus-tracker/static/media/swab.75ada768.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.ba573399.js",
-    "static/js/2.c02ed628.chunk.js",
-    "static/css/main.35975a82.chunk.css",
-    "static/js/main.c978b6e8.chunk.js"
+    "static/js/runtime-main.23b65586.js",
+    "static/js/2.30ff0791.chunk.js",
+    "static/css/main.d7fee740.chunk.css",
+    "static/js/main.a4e80024.chunk.js"
   ]
 }
